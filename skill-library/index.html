@@ -42,10 +42,12 @@ body { background: var(--bg); color: var(--ivory); font-family: 'Inter', sans-se
 
 /* ── START HERE ── */
 .start-here { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; }
-.section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 0.25rem; }
 .section-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: var(--olive); margin-bottom: 0.3rem; }
-.section-title { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0; }
-.section-sub { font-size: 0.88rem; color: var(--text-body); margin-bottom: 1.25rem; margin-top: 0.25rem; }
+.section-title { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0.25rem; }
+.section-sub { font-size: 0.88rem; color: var(--text-body); margin-bottom: 1.25rem; }
+.update-box { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 1.25rem; padding: 0.85rem 1.1rem; background: var(--surface); border: 1px solid var(--border); }
+.update-box-label { font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--olive); margin-bottom: 0.2rem; }
+.update-box-desc { font-size: 0.85rem; color: var(--text-body); }
 .refresh-btn { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--olive); background: none; border: 1px solid var(--olive); padding: 0.3rem 0.85rem; cursor: pointer; transition: color 0.15s, background 0.15s; }
 .refresh-btn:hover { background: var(--olive); color: var(--green); }
 .refresh-btn:disabled { opacity: 0.5; cursor: default; }
@@ -107,6 +109,7 @@ body { background: var(--bg); color: var(--ivory); font-family: 'Inter', sans-se
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
 footer p { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); }
+.section-sub code { font-family: 'Courier New', monospace; font-size: 0.82rem; background: var(--surface2); color: var(--olive); padding: 0.1rem 0.35rem; border-radius: 3px; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
@@ -165,14 +168,9 @@ footer p { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 3
 
 <!-- START HERE -->
 <section class="start-here" id="start-here">
-  <div class="section-header">
-    <div>
-      <div class="section-label">Recently Added</div>
-      <h2 class="section-title">New Skills</h2>
-    </div>
-    <button class="refresh-btn" id="refresh-btn" onclick="refreshNewest()">↻ Refresh</button>
-  </div>
-  <p class="section-sub">Your most recently added skills, newest first. After adding a new skill, run build.js then click Refresh.</p>
+  <div class="section-label">Recently Added</div>
+  <h2 class="section-title">New Skills</h2>
+  <p class="section-sub">Your most recently added skills, newest first.</p>
   <div class="amp-grid" id="newest-grid">
     <div class="amp-card">
       <div class="amp-num">01</div>
@@ -230,6 +228,13 @@ footer p { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 3
         <div class="amp-desc">Audits wiki pages from a batch run and returns structured PASS/FAIL results with failure categories per page.</div>
       </div>
     </div></div>
+  <div class="update-box">
+    <div class="update-box-text">
+      <div class="update-box-label">How to Update</div>
+      <div class="update-box-desc">Open a terminal in <code>raw/_work</code> → run <code>node build.js</code> → click Refresh</div>
+    </div>
+    <button class="refresh-btn" id="refresh-btn" onclick="refreshNewest()">↻ Refresh</button>
+  </div>
 </section>
 
 <!-- DIRECTORY -->
