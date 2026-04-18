@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Skills Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #111f11;
+  --surface:  #1a2e1a;
+  --surface2: #233823;
+  --border:   rgba(164,172,134,0.18);
+  --green:    #2d4a2b;
+  --olive:    #a4ac86;
+  --sage:     #7d8471;
+  --ivory:    #faf9f6;
+  --ivory2:   #ede8e0;
+  --muted:    rgba(250,249,246,0.45);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ivory); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.6; }
+
+/* ── HERO ── */
+.hero { background: var(--green); padding: 5rem 2rem 4rem; text-align: center; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(164,172,134,0.08) 0%, transparent 70%); pointer-events: none; }
+.hero-kicker { font-family: 'Oswald', sans-serif; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--olive); margin-bottom: 1.25rem; }
+.hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); line-height: 1; margin-bottom: 0.5rem; }
+.hero-rule { width: 60px; height: 2px; background: var(--olive); margin: 1.25rem auto; }
+.hero-sub { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 300; letter-spacing: 0.12em; color: var(--sage); margin-bottom: 2rem; }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.btn-primary { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.7rem 2rem; background: var(--olive); color: var(--green); border: none; cursor: pointer; }
+.btn-secondary { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.7rem 2rem; background: transparent; color: var(--olive); border: 1px solid var(--border); cursor: pointer; }
+.buckets { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+.bucket { text-align: center; flex: 1; min-width: 140px; }
+.bucket-icon { font-size: 1rem; color: var(--olive); margin-bottom: 0.35rem; }
+.bucket-label { font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0.2rem; }
+.bucket-desc { font-size: 0.68rem; color: var(--sage); line-height: 1.5; }
+
+/* ── START HERE ── */
+.start-here { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.section-label { font-family: 'Oswald', sans-serif; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: var(--olive); margin-bottom: 0.5rem; }
+.section-title { font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0.4rem; }
+.section-sub { font-size: 0.82rem; color: var(--sage); margin-bottom: 2.5rem; }
+.amp-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 3rem; }
+.amp-card { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); }
+.amp-card:hover { border-color: var(--olive); }
+.amp-num { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; color: rgba(164,172,134,0.25); flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.amp-name { font-family: 'Oswald', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0.2rem; }
+.amp-desc { font-size: 0.75rem; color: var(--sage); line-height: 1.55; }
+.starter-label { font-family: 'Oswald', sans-serif; font-size: 0.62rem; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: var(--olive); margin-bottom: 1rem; }
+.starter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
+.starter-card { padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--border); cursor: default; }
+.starter-card:hover { border-color: var(--olive); }
+.starter-name { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0.25rem; }
+.starter-desc { font-size: 0.7rem; color: var(--sage); line-height: 1.5; }
+
+/* ── DIRECTORY ── */
+.directory-wrap { border-top: 1px solid var(--border); }
+.directory-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; min-height: 80vh; }
+
+/* Sidebar */
+.sidebar { border-right: 1px solid var(--border); padding: 2rem 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.sidebar-head { font-family: 'Oswald', sans-serif; font-size: 0.58rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); padding: 0 1.25rem; margin-bottom: 0.75rem; }
+.cat-link { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.55rem 1.25rem; background: none; border: none; cursor: pointer; text-align: left; border-left: 2px solid transparent; }
+.cat-link:hover, .cat-link.active { border-left-color: var(--olive); background: rgba(164,172,134,0.06); }
+.cat-link-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ivory2); }
+.cat-link.active .cat-link-label { color: var(--olive); }
+.cat-link-count { font-family: 'Inter', sans-serif; font-size: 0.62rem; color: var(--sage); }
+.sidebar-rule { height: 1px; background: var(--border); margin: 1rem 1.25rem; }
+.show-all-btn { display: block; width: 100%; padding: 0.55rem 1.25rem; background: none; border: none; cursor: pointer; font-family: 'Oswald', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); text-align: left; }
+.show-all-btn:hover { color: var(--olive); }
+
+/* Main content */
+.dir-main { padding: 2rem 2.5rem; }
+.search-bar-wrap { margin-bottom: 1.5rem; }
+.search-bar { width: 100%; padding: 0.7rem 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--ivory); font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 300; outline: none; }
+.search-bar::placeholder { color: var(--sage); }
+.search-bar:focus { border-color: var(--olive); }
+.filter-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
+.pill { font-family: 'Oswald', sans-serif; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; background: transparent; border: 1px solid var(--border); color: var(--sage); cursor: pointer; }
+.pill:hover { border-color: var(--olive); color: var(--olive); }
+.pill.active { background: var(--olive); color: var(--green); border-color: var(--olive); }
+
+/* Category sections */
+.cat-section { margin-bottom: 3rem; }
+.cat-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.4rem; }
+.cat-title { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ivory); }
+.cat-count-badge { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: var(--sage); }
+.cat-intro { font-size: 0.76rem; color: var(--sage); margin-bottom: 1rem; line-height: 1.6; border-left: 2px solid var(--border); padding-left: 0.75rem; }
+.skill-row { display: grid; grid-template-columns: 220px 1fr; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+.skill-row:first-child { border-top: 1px solid var(--border); }
+.skill-row.hidden { display: none; }
+.skill-name { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory2); }
+.skill-desc { font-size: 0.76rem; color: var(--sage); line-height: 1.55; }
+.no-results { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); padding: 2rem 0; display: none; }
+
+/* ── FOOTER ── */
+footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+footer p { font-family: 'Oswald', sans-serif; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .directory-inner { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 1rem 0; }
+  .skill-row { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">Personal Skills Library</div>
+  <h1>Your Tools,<br>One Place</h1>
+  <div class="hero-rule"></div>
+  <div class="hero-sub">A curated collection of 86 skills — searchable, organized, ready</div>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('directory').scrollIntoView({behavior:'smooth'})">Browse the Directory</button>
+    <button class="btn-secondary" onclick="document.getElementById('start-here').scrollIntoView({behavior:'smooth'})">Start Here</button>
+  </div>
+  <div class="buckets">
+    
+    <div class="bucket">
+      <div class="bucket-icon">◎</div>
+      <div class="bucket-label">Study</div>
+      <div class="bucket-desc">FSOE prep, exam practice, argument refinement</div>
+    </div>
+    <div class="bucket">
+      <div class="bucket-icon">◈</div>
+      <div class="bucket-label">Create</div>
+      <div class="bucket-desc">Writing, design, video, and document production</div>
+    </div>
+    <div class="bucket">
+      <div class="bucket-icon">◇</div>
+      <div class="bucket-label">Automate</div>
+      <div class="bucket-desc">Browser automation, file tools, API integrations</div>
+    </div>
+    <div class="bucket">
+      <div class="bucket-icon">◉</div>
+      <div class="bucket-label">Think</div>
+      <div class="bucket-desc">Research, analysis, brainstorming, planning</div>
+    </div>
+    <div class="bucket">
+      <div class="bucket-icon">◆</div>
+      <div class="bucket-label">Manage</div>
+      <div class="bucket-desc">Wiki, social, skill tools, ops</div>
+    </div>
+  </div>
+</section>
+
+<!-- START HERE -->
+<section class="start-here" id="start-here">
+  <div class="section-label">Begin Here</div>
+  <h2 class="section-title">Run These First</h2>
+  <p class="section-sub">These five skills configure your system. Everything else works better after you've run them.</p>
+  <div class="amp-grid">
+    <div class="amp-card">
+      <div class="amp-num">01</div>
+      <div class="amp-body">
+        <div class="amp-name">daily-planning</div>
+        <div class="amp-desc">Connects your calendar and tasks — run this each morning to orient your day.</div>
+      </div>
+    </div>
+    <div class="amp-card">
+      <div class="amp-num">02</div>
+      <div class="amp-body">
+        <div class="amp-name">wiki</div>
+        <div class="amp-desc">Ingests new files into your second brain — run this after any batch of raw material.</div>
+      </div>
+    </div>
+    <div class="amp-card">
+      <div class="amp-num">03</div>
+      <div class="amp-body">
+        <div class="amp-name">skill-creator</div>
+        <div class="amp-desc">Creates new skills — run this whenever you want to capture a new workflow.</div>
+      </div>
+    </div>
+    <div class="amp-card">
+      <div class="amp-num">04</div>
+      <div class="amp-body">
+        <div class="amp-name">brand-guidelines</div>
+        <div class="amp-desc">Sets brand context that other design and content skills read downstream.</div>
+      </div>
+    </div>
+    <div class="amp-card">
+      <div class="amp-num">05</div>
+      <div class="amp-body">
+        <div class="amp-name">context-fundamentals</div>
+        <div class="amp-desc">Explains how context works in Claude — foundational reading before building complex workflows.</div>
+      </div>
+    </div></div>
+
+  <div class="starter-label">Top Picks to Explore</div>
+  <div class="starter-grid"><div class="starter-card"><div class="starter-name">fsoe-argument-refiner</div><div class="starter-desc">Takes an FSOE question, argues the strongest defensible position with real facts, then refines it through debate under pressure.</div></div><div class="starter-card"><div class="starter-name">brainstorming-skill</div><div class="starter-desc">Applies 30+ research-validated prompt patterns across 14 categories to generate structured ideas for any creative or strategic problem.</div></div><div class="starter-card"><div class="starter-name">thinking-partner</div><div class="starter-desc">Processes raw material (transcript, article, reaction) to find the connection you missed — not coaching, just sharp thinking.</div></div><div class="starter-card"><div class="starter-name">trailer-creator</div><div class="starter-desc">Creates short-form video trailers for "Steal Our Winners" podcast episodes using a structured format from transcripts or soundbites.</div></div><div class="starter-card"><div class="starter-name">interface-design</div><div class="starter-desc">Designs dashboards, admin panels, and interactive product interfaces — not marketing pages or landing pages.</div></div><div class="starter-card"><div class="starter-name">great-leads</div><div class="starter-desc">Applies Masterson and Forde's 6-lead-type framework to choose and write the right lead for any sales message.</div></div><div class="starter-card"><div class="starter-name">transcribe</div><div class="starter-desc">Transcribes audio and video to markdown and SRT using local faster-whisper with GPU acceleration and a pre-run gatecheck.</div></div><div class="starter-card"><div class="starter-name">wiki-query</div><div class="starter-desc">Queries your personal wiki with natural questions or analysis templates to surface patterns, gaps, and contradictions across your knowledge base.</div></div><div class="starter-card"><div class="starter-name">daily-planning</div><div class="starter-desc">Answers natural-language questions about your Google Calendar and ClickUp tasks — schedule, availability, and urgent items.</div></div><div class="starter-card"><div class="starter-name">skill-creator</div><div class="starter-desc">Creates, edits, and benchmarks Claude skills — including evals, variance analysis, and trigger description optimization.</div></div><div class="starter-card"><div class="starter-name">copy-polish</div><div class="starter-desc">Final-pass skill for persuasive copy — removes AI writing tells and tightens flow without changing the structure or argument.</div></div><div class="starter-card"><div class="starter-name">meeting-insights-analyzer</div><div class="starter-desc">Analyzes meeting transcripts to surface behavioral patterns — conflict avoidance, filler words, missed listening moments — with actionable feedback.</div></div></div>
+</section>
+
+<!-- DIRECTORY -->
+<div class="directory-wrap" id="directory">
+  <div class="directory-inner">
+    <aside class="sidebar">
+      <div class="sidebar-head">Categories</div>
+      
+    <button class="cat-link" data-cat="fsoe" onclick="filterByCategory(this)">
+      <span class="cat-link-label">FSOE Study Suite</span>
+      <span class="cat-link-count" data-cat="fsoe"></span>
+    </button>
+    <button class="cat-link" data-cat="writing" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Writing & Voice</span>
+      <span class="cat-link-count" data-cat="writing"></span>
+    </button>
+    <button class="cat-link" data-cat="research" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Research & Analysis</span>
+      <span class="cat-link-count" data-cat="research"></span>
+    </button>
+    <button class="cat-link" data-cat="design" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Design & Visual</span>
+      <span class="cat-link-count" data-cat="design"></span>
+    </button>
+    <button class="cat-link" data-cat="documents" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Document & Files</span>
+      <span class="cat-link-count" data-cat="documents"></span>
+    </button>
+    <button class="cat-link" data-cat="video" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Video & Media</span>
+      <span class="cat-link-count" data-cat="video"></span>
+    </button>
+    <button class="cat-link" data-cat="automation" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Automation & Dev</span>
+      <span class="cat-link-count" data-cat="automation"></span>
+    </button>
+    <button class="cat-link" data-cat="planning" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Planning & Productivity</span>
+      <span class="cat-link-count" data-cat="planning"></span>
+    </button>
+    <button class="cat-link" data-cat="wiki" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Wiki & Knowledge</span>
+      <span class="cat-link-count" data-cat="wiki"></span>
+    </button>
+    <button class="cat-link" data-cat="social" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Social & Content</span>
+      <span class="cat-link-count" data-cat="social"></span>
+    </button>
+    <button class="cat-link" data-cat="skill-tools" onclick="filterByCategory(this)">
+      <span class="cat-link-label">Skill Tools</span>
+      <span class="cat-link-count" data-cat="skill-tools"></span>
+    </button>
+      <div class="sidebar-rule"></div>
+      <button class="show-all-btn" onclick="showAll()">Show All</button>
+    </aside>
+    <main class="dir-main">
+      <div class="search-bar-wrap">
+        <input class="search-bar" type="search" placeholder="Search skills..." oninput="handleSearch(this.value)">
+      </div>
+      <div class="filter-pills">
+        <button class="pill" data-cat="fsoe" onclick="filterPill(this)">FSOE Study Suite</button><button class="pill" data-cat="writing" onclick="filterPill(this)">Writing & Voice</button><button class="pill" data-cat="research" onclick="filterPill(this)">Research & Analysis</button><button class="pill" data-cat="design" onclick="filterPill(this)">Design & Visual</button><button class="pill" data-cat="documents" onclick="filterPill(this)">Document & Files</button><button class="pill" data-cat="video" onclick="filterPill(this)">Video & Media</button><button class="pill" data-cat="automation" onclick="filterPill(this)">Automation & Dev</button><button class="pill" data-cat="planning" onclick="filterPill(this)">Planning & Productivity</button><button class="pill" data-cat="wiki" onclick="filterPill(this)">Wiki & Knowledge</button><button class="pill" data-cat="social" onclick="filterPill(this)">Social & Content</button><button class="pill" data-cat="skill-tools" onclick="filterPill(this)">Skill Tools</button>
+      </div>
+      <div id="dir-content">
+    <section class="cat-section" id="cat-fsoe">
+      <div class="cat-header">
+        <h3 class="cat-title">FSOE Study Suite</h3>
+        <span class="cat-count-badge" data-cat="fsoe"></span>
+      </div>
+      <p class="cat-intro">Use these when preparing for the FSOE written or oral exam — argument building, timed practice, essay coaching, and topic summaries.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="fsoe" data-slug="fsoe-argument-refiner">
+    <div class="skill-name">fsoe-argument-refiner</div>
+    <div class="skill-desc">Takes an FSOE question, argues the strongest defensible position with real facts, then refines it through debate under pressure.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-devils-advocate">
+    <div class="skill-name">fsoe-devils-advocate</div>
+    <div class="skill-desc">Argues the opposing side of any FSOE position using real counterarguments — never fabricates — to force you to defeat legitimate objections.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-exam-prep">
+    <div class="skill-name">fsoe-exam-prep</div>
+    <div class="skill-desc">Builds a complete FSOE Written Test prep package: 80/20 Master Reference, Pocket Card, Knowledge List, Routing Exercise, and Study Plan.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-ia-agreement">
+    <div class="skill-name">fsoe-ia-agreement</div>
+    <div class="skill-desc">Builds FSOE IA Pocket Card entries for the 7 key international agreements — UNCLOS, ASEAN Charter, UN Charter, and more.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-lecture-teacher">
+    <div class="skill-name">fsoe-lecture-teacher</div>
+    <div class="skill-desc">Converts Ateneo-FSOE lecture transcripts into exam-optimized teaching documents using a Dispatcher/Manager agent pattern.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-primer-writer">
+    <div class="skill-name">fsoe-primer-writer</div>
+    <div class="skill-desc">Generates scannable, question-driven exam primers from an FSOE question bank file, organized in topic batches with gatechecks.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-random-question">
+    <div class="skill-name">fsoe-random-question</div>
+    <div class="skill-desc">Picks a random FSOE past exam question from a specified topic and starts a timed practice session.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-sparring-partner">
+    <div class="skill-name">fsoe-sparring-partner</div>
+    <div class="skill-desc">Reads patterns in your FSOE arguments, identifies gaps, and pushes back with evidence to sharpen your reasoning.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-topic-summary">
+    <div class="skill-name">fsoe-topic-summary</div>
+    <div class="skill-desc">Produces a Why/Goal/How exam summary from any FSOE source material in Ria Santos voice — sharp, sassy, and memorable.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-transcript-cleaner">
+    <div class="skill-name">fsoe-transcript-cleaner</div>
+    <div class="skill-desc">Cleans raw YouTube auto-caption transcripts from Draft.md and saves them as structured FSOE study documents.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="fsoe-writing-coach">
+    <div class="skill-name">fsoe-writing-coach</div>
+    <div class="skill-desc">Coaches diplomatic essay writing for the Philippine Foreign Service Officer Examination, including drafts, knowledge dumps, and analytical feedback.</div>
+  </div><div class="skill-row" data-cat="fsoe" data-slug="vocab-quiz-creator">
+    <div class="skill-name">Vocab Quiz Creator</div>
+    <div class="skill-desc">Builds Dark Academia-themed vocabulary quizzes with mixed question types, keyboard shortcuts, and detailed wrong-answer review.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-writing">
+      <div class="cat-header">
+        <h3 class="cat-title">Writing & Voice</h3>
+        <span class="cat-count-badge" data-cat="writing"></span>
+      </div>
+      <p class="cat-intro">Use these when writing, rewriting, or polishing — from lead selection and copy frameworks to voice matching and plain-language rewrites.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="writing" data-slug="action-guide">
+    <div class="skill-name">action-guide</div>
+    <div class="skill-desc">Converts a "Steal Our Winners" interview transcript into a structured implementation guide using Problem/Solution/Steps/Benefits/Case Study format.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="cfr-voice-OG">
+    <div class="skill-name">cfr-voice-OG</div>
+    <div class="skill-desc">Rewrites drafts in the original CFR house style: plain declarative sentences, no metaphors, every sentence earns its place.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="cfr-voice">
+    <div class="skill-name">cfr-voice</div>
+    <div class="skill-desc">Rewrites content in CFR's Coursera voice — authoritative, balanced, educational — used in the Global Affairs curriculum.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="cfr-update-checker">
+    <div class="skill-name">CFR Update Checker</div>
+    <div class="skill-desc">Checks whether local CFR Education "Regions of the World" files are current with the live website.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="content-creator">
+    <div class="skill-name">content-creator</div>
+    <div class="skill-desc">Produces SEO-optimized marketing content with consistent brand voice using built-in frameworks for blogs, social media, and content calendars.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="content-research-writer">
+    <div class="skill-name">content-research-writer</div>
+    <div class="skill-desc">Researches, cites, and iterates on long-form content in real time — covering outlines, hooks, and section-by-section feedback.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="copy-polish">
+    <div class="skill-name">copy-polish</div>
+    <div class="skill-desc">Final-pass skill for persuasive copy — removes AI writing tells and tightens flow without changing the structure or argument.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="great-leads">
+    <div class="skill-name">great-leads</div>
+    <div class="skill-desc">Applies Masterson and Forde's 6-lead-type framework to choose and write the right lead for any sales message.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="great-leads-check">
+    <div class="skill-name">great-leads-check</div>
+    <div class="skill-desc">Evaluates any lead against the Great Leads framework, requiring correct identification of what's being sold before scoring.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="humanizer">
+    <div class="skill-name">humanizer</div>
+    <div class="skill-desc">Removes AI writing patterns — em dash overuse, filler phrases, passive voice, vague attributions — based on Wikipedia's comprehensive AI-writing guide.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="internal-comms">
+    <div class="skill-name">internal-comms</div>
+    <div class="skill-desc">Writes internal communications — status reports, leadership updates, incident reports, newsletters — in company-approved formats.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="outcome-writer">
+    <div class="skill-name">outcome-writer</div>
+    <div class="skill-desc">Uses Rich Schefren's outcome-first method to define or rewrite the receiver experience section of any Claude skill.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="patina">
+    <div class="skill-name">patina</div>
+    <div class="skill-desc">Removes AI writing patterns across four languages (Korean, English, Chinese, Japanese) using a plugin-based two-phase pipeline.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="plain-language-rewriter">
+    <div class="skill-name">plain-language-rewriter</div>
+    <div class="skill-desc">Strips authoritative vagueness from dense study documents and runs a critic agent second pass for voice cleanup.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="scriptwriting-methodology">
+    <div class="skill-name">scriptwriting-methodology</div>
+    <div class="skill-desc">Applies direct response frameworks — DR formula, PAS, AIDA, hook formulas — to video scripts, sponsored content, and conversion copy.</div>
+  </div><div class="skill-row" data-cat="writing" data-slug="thinking-partner">
+    <div class="skill-name">thinking-partner</div>
+    <div class="skill-desc">Processes raw material (transcript, article, reaction) to find the connection you missed — not coaching, just sharp thinking.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-research">
+      <div class="cat-header">
+        <h3 class="cat-title">Research & Analysis</h3>
+        <span class="cat-count-badge" data-cat="research"></span>
+      </div>
+      <p class="cat-intro">Use these when you need to generate ideas, surface insights, or build structured research — brainstorming, lead analysis, and meeting intelligence.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="research" data-slug="brainstorming-skill">
+    <div class="skill-name">brainstorming-skill</div>
+    <div class="skill-desc">Applies 30+ research-validated prompt patterns across 14 categories to generate structured ideas for any creative or strategic problem.</div>
+  </div><div class="skill-row" data-cat="research" data-slug="lead-research-assistant">
+    <div class="skill-name">lead-research-assistant</div>
+    <div class="skill-desc">Identifies high-quality leads by analyzing your business, searching for target companies, and suggesting contact strategies.</div>
+  </div><div class="skill-row" data-cat="research" data-slug="meeting-insights-analyzer">
+    <div class="skill-name">meeting-insights-analyzer</div>
+    <div class="skill-desc">Analyzes meeting transcripts to surface behavioral patterns — conflict avoidance, filler words, missed listening moments — with actionable feedback.</div>
+  </div><div class="skill-row" data-cat="research" data-slug="qa-database">
+    <div class="skill-name">qa-database</div>
+    <div class="skill-desc">Extracts customer questions and answers from community post screenshots and appends them to an Obsidian product QA database.</div>
+  </div><div class="skill-row" data-cat="research" data-slug="zenithpro-qa-processor">
+    <div class="skill-name">zenithpro-qa-processor</div>
+    <div class="skill-desc">Processes ZenithPro Q&A transcripts to refine upcoming lessons and mine Rich's answers, stories, and frameworks for reusable IP.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-design">
+      <div class="cat-header">
+        <h3 class="cat-title">Design & Visual</h3>
+        <span class="cat-count-badge" data-cat="design"></span>
+      </div>
+      <p class="cat-intro">Use these when building interfaces, designing visuals, or applying brand — UI systems, canvas art, image tools, and design style pickers.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="design" data-slug="algorithmic-art">
+    <div class="skill-name">algorithmic-art</div>
+    <div class="skill-desc">Generates original code-driven visual art — flow fields, particle systems, geometric patterns — using p5.js with seeded randomness.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="brand-guidelines">
+    <div class="skill-name">brand-guidelines</div>
+    <div class="skill-desc">Applies Anthropic's official brand colors and typography to any artifact that needs Anthropic's visual identity.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="canvas-design">
+    <div class="skill-name">canvas-design</div>
+    <div class="skill-desc">Creates original static visual designs — posters, art, layouts — exported as PNG and PDF using design philosophy principles.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="image-enhancer">
+    <div class="skill-name">image-enhancer</div>
+    <div class="skill-desc">Improves image resolution, sharpness, and clarity — especially for screenshots destined for presentations or social media.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="interface-design">
+    <div class="skill-name">interface-design</div>
+    <div class="skill-desc">Designs dashboards, admin panels, and interactive product interfaces — not marketing pages or landing pages.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="theme-factory">
+    <div class="skill-name">theme-factory</div>
+    <div class="skill-desc">Applies one of 10 preset visual themes — colors and fonts — to slides, docs, landing pages, or any HTML artifact.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="typeui-styles">
+    <div class="skill-name">typeui-styles</div>
+    <div class="skill-desc">Shows available TypeUI visual styles and loads the chosen one for any HTML or web page build.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="ui-design-system">
+    <div class="skill-name">ui-design-system</div>
+    <div class="skill-desc">Generates design tokens, component documentation, and developer handoff materials for building consistent UI design systems.</div>
+  </div><div class="skill-row" data-cat="design" data-slug="ux-researcher-designer">
+    <div class="skill-name">ux-researcher-designer</div>
+    <div class="skill-desc">Produces data-driven personas, journey maps, usability testing frameworks, and research synthesis for UX design and validation.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-documents">
+      <div class="cat-header">
+        <h3 class="cat-title">Document & Files</h3>
+        <span class="cat-count-badge" data-cat="documents"></span>
+      </div>
+      <p class="cat-intro">Use these when creating, editing, or converting files — Word, PDF, PowerPoint, Excel, and image-to-markdown extraction.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="documents" data-slug="docx">
+    <div class="skill-name">docx</div>
+    <div class="skill-desc">Creates, edits, and analyzes Word documents with support for tracked changes, comments, and formatting preservation.</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="file-organizer">
+    <div class="skill-name">file-organizer</div>
+    <div class="skill-desc">Reorganizes files and folders by understanding context, finding duplicates, and suggesting cleaner structures across your machine.</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="image-to-markdown">
+    <div class="skill-name">image-to-markdown</div>
+    <div class="skill-desc">Extracts text from images and screenshots using GPU-accelerated DeepSeek OCR-2 and outputs clean markdown.</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="pdf-edit">
+    <div class="skill-name">pdf-edit</div>
+    <div class="skill-desc">Extracts text and tables, creates, merges, and splits text-based PDFs — not for scanned documents (use pdf-ocr-to-markdown for those).</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="pdf-ocr-to-markdown">
+    <div class="skill-name">pdf-ocr-to-markdown</div>
+    <div class="skill-desc">Converts PDFs to markdown using 3-tier auto-detection: instant text extraction, fast OCR, or DeepSeek OCR-2 for handwriting and complex layouts.</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="pptx">
+    <div class="skill-name">pptx</div>
+    <div class="skill-desc">Creates, edits, and analyzes PowerPoint presentations with support for layouts, speaker notes, and content modification.</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="qec-converter">
+    <div class="skill-name">qec-converter</div>
+    <div class="skill-desc">Restructures dense reference docs into QEC format — Question/Evidence/Conclusion blocks with elaborative interrogation callouts — for active recall study.</div>
+  </div><div class="skill-row" data-cat="documents" data-slug="xlsx">
+    <div class="skill-name">xlsx</div>
+    <div class="skill-desc">Creates, reads, edits, and analyzes spreadsheets with formula support, formatting, and data visualization across xlsx, csv, and related formats.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-video">
+      <div class="cat-header">
+        <h3 class="cat-title">Video & Media</h3>
+        <span class="cat-count-badge" data-cat="video"></span>
+      </div>
+      <p class="cat-intro">Use these when working with video, audio, or transcripts — downloading, transcribing, building trailers, and cleaning captions.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="video" data-slug="personal-transcript-cleaner">
+    <div class="skill-name">personal-transcript-cleaner</div>
+    <div class="skill-desc">Cleans raw YouTube auto-caption transcripts from Personal/raw/Transcripts/Draft.md and saves them as structured documents.</div>
+  </div><div class="skill-row" data-cat="video" data-slug="personal-transcript-cleaner-agents">
+    <div class="skill-name">personal-transcript-cleaner-agents</div>
+    <div class="skill-desc">Two-Haiku-agent version of the transcript cleaner — one cleans, one verifies — with stronger guardrails against paraphrasing.</div>
+  </div><div class="skill-row" data-cat="video" data-slug="trailer-checker">
+    <div class="skill-name">trailer-checker</div>
+    <div class="skill-desc">Validates whether a trailer selected the most intriguing clips from an episode — feedback only, no rewriting.</div>
+  </div><div class="skill-row" data-cat="video" data-slug="trailer-creator">
+    <div class="skill-name">trailer-creator</div>
+    <div class="skill-desc">Creates short-form video trailers for "Steal Our Winners" podcast episodes using a structured format from transcripts or soundbites.</div>
+  </div><div class="skill-row" data-cat="video" data-slug="trailer-generator">
+    <div class="skill-name">trailer-generator</div>
+    <div class="skill-desc">Generates hook-driven short-form video trailers from interview transcripts using direct response copywriting — teases strategy without revealing the solution.</div>
+  </div><div class="skill-row" data-cat="video" data-slug="transcribe">
+    <div class="skill-name">transcribe</div>
+    <div class="skill-desc">Transcribes audio and video to markdown and SRT using local faster-whisper with GPU acceleration and a pre-run gatecheck.</div>
+  </div><div class="skill-row" data-cat="video" data-slug="video-downloader">
+    <div class="skill-name">video-downloader</div>
+    <div class="skill-desc">Downloads videos from YouTube and other platforms in your choice of format and quality for offline use or editing.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-automation">
+      <div class="cat-header">
+        <h3 class="cat-title">Automation & Dev</h3>
+        <span class="cat-count-badge" data-cat="automation"></span>
+      </div>
+      <p class="cat-intro">Use these when automating tasks, building tools, or running browser workflows — Playwright, MCP servers, GitHub Pages, and file automation.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="automation" data-slug="delete-nul-files">
+    <div class="skill-name">delete-nul-files</div>
+    <div class="skill-desc">Deletes Windows reserved-name 'nul' files that trigger "Invalid MS-DOS function" errors using UNC path handling.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="facebook-automation">
+    <div class="skill-name">Facebook Automation</div>
+    <div class="skill-desc">Automates Facebook Page management — posts, scheduling, video uploads, and Messenger engagement — via Composio.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="fireflies-downloader">
+    <div class="skill-name">fireflies-downloader</div>
+    <div class="skill-desc">Bulk-downloads Fireflies AI meeting transcripts, summaries, and action items to Obsidian via GraphQL API.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="github-pages">
+    <div class="skill-name">github-pages</div>
+    <div class="skill-desc">Deploys HTML files to GitHub Pages under the personal 7thCaliburn account — not for SP/work deployments.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="google-drive">
+    <div class="skill-name">google-drive</div>
+    <div class="skill-desc">Browses, searches, and reads files from Google Drive and Google Docs/Sheets via MCP integration.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="mcp-builder">
+    <div class="skill-name">mcp-builder</div>
+    <div class="skill-desc">Guides building well-designed MCP servers in Python (FastMCP) or TypeScript to connect LLMs to external APIs.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="playwright-skill">
+    <div class="skill-name">Playwright Browser Automation</div>
+    <div class="skill-desc">Automates any browser task with Playwright — form fills, screenshots, login flows, link checks, and responsive design validation.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="slack-gif-creator">
+    <div class="skill-name">slack-gif-creator</div>
+    <div class="skill-desc">Creates animated GIFs sized and optimized for Slack, with constraint validation and animation concept guidance.</div>
+  </div><div class="skill-row" data-cat="automation" data-slug="webapp-testing">
+    <div class="skill-name">webapp-testing</div>
+    <div class="skill-desc">Tests local web apps with Playwright — frontend verification, UI debugging, screenshots, and browser log inspection.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-planning">
+      <div class="cat-header">
+        <h3 class="cat-title">Planning & Productivity</h3>
+        <span class="cat-count-badge" data-cat="planning"></span>
+      </div>
+      <p class="cat-intro">Use these to start your day, plan sessions, or prepare lessons — calendar queries, mission control, briefings, and AI course prep.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="planning" data-slug="daily-briefing">
+    <div class="skill-name">daily-briefing</div>
+    <div class="skill-desc">Delivers your daily schedule through an upbeat executive assistant persona that makes the day feel manageable.</div>
+  </div><div class="skill-row" data-cat="planning" data-slug="daily-planning">
+    <div class="skill-name">daily-planning</div>
+    <div class="skill-desc">Answers natural-language questions about your Google Calendar and ClickUp tasks — schedule, availability, and urgent items.</div>
+  </div><div class="skill-row" data-cat="planning" data-slug="fm-onboarding-update">
+    <div class="skill-name">fm-onboarding-update</div>
+    <div class="skill-desc">Checks for Force Multiplier onboarding updates and refreshes the FM client report and onboarding sheet.</div>
+  </div><div class="skill-row" data-cat="planning" data-slug="morning-mission-control">
+    <div class="skill-name">launch-mission-control</div>
+    <div class="skill-desc">Launches the Morning Mission Control dashboard with your daily schedule, tasks, and priorities in one view.</div>
+  </div><div class="skill-row" data-cat="planning" data-slug="session-prep-AI">
+    <div class="skill-name">session-prep-AI</div>
+    <div class="skill-desc">Builds a researched, accuracy-audited CFR-style lesson for the "Learning AI Effectively" course before any teaching begins.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-wiki">
+      <div class="cat-header">
+        <h3 class="cat-title">Wiki & Knowledge</h3>
+        <span class="cat-count-badge" data-cat="wiki"></span>
+      </div>
+      <p class="cat-intro">Use these to manage your personal second brain — ingesting files, running batch audits, and querying the wiki.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="wiki" data-slug="wiki">
+    <div class="skill-name">wiki</div>
+    <div class="skill-desc">Checks raw/ for unprocessed files and runs the full personal wiki ingestion workflow on confirmation.</div>
+  </div><div class="skill-row" data-cat="wiki" data-slug="wiki-audit">
+    <div class="skill-name">wiki-audit</div>
+    <div class="skill-desc">Audits wiki pages from a batch run and returns structured PASS/FAIL results with failure categories per page.</div>
+  </div><div class="skill-row" data-cat="wiki" data-slug="wiki-batch-orchestrator">
+    <div class="skill-name">wiki-batch-orchestrator</div>
+    <div class="skill-desc">State machine that runs wiki ingest batches, audits output, rolls back bad pages, and stops on systemic failures.</div>
+  </div><div class="skill-row" data-cat="wiki" data-slug="wiki-batch-run">
+    <div class="skill-name">wiki-batch-run</div>
+    <div class="skill-desc">Executes one wiki ingest batch via batch_run.py and returns the result JSON — called by wiki-batch-orchestrator.</div>
+  </div><div class="skill-row" data-cat="wiki" data-slug="wiki-query">
+    <div class="skill-name">wiki-query</div>
+    <div class="skill-desc">Queries your personal wiki with natural questions or analysis templates to surface patterns, gaps, and contradictions across your knowledge base.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-social">
+      <div class="cat-header">
+        <h3 class="cat-title">Social & Content</h3>
+        <span class="cat-count-badge" data-cat="social"></span>
+      </div>
+      <p class="cat-intro">Use these for social publishing and community management — Substack downloads, challenge posts, and customer-facing responses.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="social" data-slug="challenge-posts">
+    <div class="skill-name">challenge-posts</div>
+    <div class="skill-desc">Captures Facebook challenge posts from a Google Doc and compiles them into an Obsidian note with images and links.</div>
+  </div><div class="skill-row" data-cat="social" data-slug="customer-response">
+    <div class="skill-name">customer-response</div>
+    <div class="skill-desc">Drafts copy-paste-ready Strategic Profits customer responses and community announcements, routing to the right specialist agent automatically.</div>
+  </div><div class="skill-row" data-cat="social" data-slug="substack-notes">
+    <div class="skill-name">substack-notes</div>
+    <div class="skill-desc">Downloads Substack Notes from any profile's Activity tab to markdown files in Obsidian.</div>
+  </div><div class="skill-row" data-cat="social" data-slug="substack-ocr">
+    <div class="skill-name">substack-ocr</div>
+    <div class="skill-desc">Downloads images from Substack posts and converts them to clean markdown using GPU-accelerated DeepSeek OCR-2.</div>
+  </div><div class="skill-row" data-cat="social" data-slug="substack-posts">
+    <div class="skill-name">substack-posts</div>
+    <div class="skill-desc">Downloads Substack long-form posts to Obsidian as markdown — free posts without a cookie, paid content with one.</div>
+  </div></div>
+    </section>
+    <section class="cat-section" id="cat-skill-tools">
+      <div class="cat-header">
+        <h3 class="cat-title">Skill Tools</h3>
+        <span class="cat-count-badge" data-cat="skill-tools"></span>
+      </div>
+      <p class="cat-intro">Use these to build, improve, and understand skills — creation workflows, context fundamentals, and library builders.</p>
+      <div class="skill-rows"><div class="skill-row" data-cat="skill-tools" data-slug="context-fundamentals">
+    <div class="skill-name">context-fundamentals</div>
+    <div class="skill-desc">Explains what a language model's context window is and what it contains: instructions, tools, history, retrieved docs, and outputs.</div>
+  </div><div class="skill-row" data-cat="skill-tools" data-slug="contract-first">
+    <div class="skill-name">contract-first</div>
+    <div class="skill-desc">Forces bilateral agreement on intent before any output is generated, eliminating one-way broadcast on ambiguous or high-stakes tasks.</div>
+  </div><div class="skill-row" data-cat="skill-tools" data-slug="program-library-builder">
+    <div class="skill-name">program-library-builder</div>
+    <div class="skill-desc">Transforms a zip of Claude skills into a branded, searchable HTML index site and markdown walkthrough for customer-facing program libraries.</div>
+  </div><div class="skill-row" data-cat="skill-tools" data-slug="skill-creator">
+    <div class="skill-name">skill-creator</div>
+    <div class="skill-desc">Creates, edits, and benchmarks Claude skills — including evals, variance analysis, and trigger description optimization.</div>
+  </div><div class="skill-row" data-cat="skill-tools" data-slug="skill-developer">
+    <div class="skill-name">skill-developer</div>
+    <div class="skill-desc">Builds Claude Code skills following Anthropic best practices, covering YAML frontmatter, trigger types, hooks, and the 500-line rule.</div>
+  </div></div>
+    </section></div>
+      <div class="no-results" id="no-results">No skills match your search.</div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <p>Personal Skills Library &nbsp;·&nbsp; 86 Skills &nbsp;·&nbsp; Built with Claude</p>
+</footer>
+
+<script>
+// ── Count badges ──────────────────────────────────────────
+function updateCounts() {
+  document.querySelectorAll('[data-cat]').forEach(el => {
+    if (el.classList.contains('cat-count-badge') || el.classList.contains('cat-link-count')) {
+      const cat = el.dataset.cat;
+      const visible = document.querySelectorAll(`.skill-row[data-cat="${cat}"]:not(.hidden)`).length;
+      el.textContent = visible || '';
+    }
+  });
+}
+
+// ── Filter by category ────────────────────────────────────
+function filterByCategory(btn) {
+  const cat = btn.dataset.cat;
+  document.querySelectorAll('.cat-link').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.cat === cat);
+  });
+  document.querySelectorAll('.cat-section').forEach(s => {
+    s.style.display = s.id === 'cat-' + cat ? '' : 'none';
+  });
+  document.querySelectorAll('.skill-row').forEach(r => r.classList.remove('hidden'));
+  updateCounts();
+  checkNoResults();
+}
+
+function filterPill(btn) {
+  const cat = btn.dataset.cat;
+  const sideBtn = document.querySelector(`.cat-link[data-cat="${cat}"]`);
+  if (sideBtn) filterByCategory(sideBtn);
+}
+
+function showAll() {
+  document.querySelectorAll('.cat-link').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cat-section').forEach(s => s.style.display = '');
+  document.querySelectorAll('.skill-row').forEach(r => r.classList.remove('hidden'));
+  updateCounts();
+  checkNoResults();
+}
+
+// ── Search ────────────────────────────────────────────────
+function handleSearch(q) {
+  const term = q.trim().toLowerCase();
+  // reset category filter when searching
+  document.querySelectorAll('.cat-section').forEach(s => s.style.display = '');
+  document.querySelectorAll('.cat-link').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+
+  document.querySelectorAll('.skill-row').forEach(r => {
+    const text = r.textContent.toLowerCase();
+    r.classList.toggle('hidden', term.length > 0 && !text.includes(term));
+  });
+  // hide empty sections
+  document.querySelectorAll('.cat-section').forEach(s => {
+    const visible = s.querySelectorAll('.skill-row:not(.hidden)').length;
+    s.style.display = visible ? '' : 'none';
+  });
+  updateCounts();
+  checkNoResults();
+}
+
+function checkNoResults() {
+  const anyVisible = document.querySelectorAll('.skill-row:not(.hidden)').length > 0;
+  document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
+}
+
+// ── Init ──────────────────────────────────────────────────
+updateCounts();
+</script>
+</body>
+</html>
