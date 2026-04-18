@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme × Style Combos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Audiowide&family=Space+Mono:wght@400;700&family=Gelasio:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;900&family=Oswald:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0d; padding: 2.5rem; }
+  header { text-align: center; margin-bottom: 2.5rem; }
+  header h1 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; margin-bottom: 0.3rem; }
+  header p { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #555; letter-spacing: 0.06em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; max-width: 1400px; margin: 0 auto; }
+
+  .card { border-radius: 12px; overflow: hidden; }
+  .tag-row { display: flex; gap: 0.4rem; padding: 0.6rem 0.9rem; align-items: center; }
+  .tag { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 20px; }
+
+  /* ═══════════════════════════════════════
+     1. Midnight Galaxy × Cosmic
+  ═══════════════════════════════════════ */
+  .combo-cosmic {
+    background: #0a0618;
+    border: 1px solid #4a4e8f;
+    position: relative;
+    overflow: hidden;
+  }
+  .combo-cosmic::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, #4a4e8f44 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .combo-cosmic .tag-row { background: #0f0a20; border-bottom: 1px solid #2a2050; }
+  .combo-cosmic .tag.palette { background: #2b1e3e; color: #a490c2; }
+  .combo-cosmic .tag.style { background: #4a4e8f22; color: #7a7edf; border: 1px solid #4a4e8f; }
+  .combo-cosmic .body { padding: 1.75rem; }
+  .combo-cosmic .eyebrow { font-family: 'Audiowide', cursive; font-size: 0.6rem; color: #4a4e8f; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .combo-cosmic h2 { font-family: 'Audiowide', cursive; font-size: 1.2rem; color: #e6e6fa; line-height: 1.3; margin-bottom: 0.75rem; }
+  .combo-cosmic p { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #9090c0; line-height: 1.6; margin-bottom: 1.25rem; }
+  .combo-cosmic .btn { font-family: 'Audiowide', cursive; font-size: 0.65rem; padding: 0.55rem 1.2rem; background: transparent; color: #a490c2; border: 1px solid #a490c2; border-radius: 3px; letter-spacing: 0.08em; display: inline-block; cursor: default; }
+  .combo-cosmic .dots { display: flex; gap: 0.5rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #1e1640; }
+  .combo-cosmic .dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ═══════════════════════════════════════
+     2. Ocean Depths × Mono
+  ═══════════════════════════════════════ */
+  .combo-mono {
+    background: #1a2332;
+    border: 1px solid #2d3e52;
+    font-family: 'Space Mono', monospace;
+  }
+  .combo-mono .tag-row { background: #111a26; border-bottom: 1px solid #2d3e52; }
+  .combo-mono .tag.palette { background: #1a2332; color: #a8dadc; border: 1px solid #2d8b8b; }
+  .combo-mono .tag.style { background: transparent; color: #2d8b8b; border: 1px solid #2d3e52; }
+  .combo-mono .body { padding: 1.75rem; }
+  .combo-mono .eyebrow { font-size: 0.6rem; color: #2d8b8b; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .combo-mono h2 { font-size: 1.05rem; font-weight: 700; color: #f1faee; line-height: 1.3; margin-bottom: 0.75rem; }
+  .combo-mono p { font-size: 0.72rem; color: #7a9aaa; line-height: 1.7; margin-bottom: 1.25rem; }
+  .combo-mono .btn { font-size: 0.65rem; padding: 0.5rem 1rem; background: #2d8b8b; color: #f1faee; border-radius: 2px; display: inline-block; cursor: default; }
+  .combo-mono .prompt { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #1e2e3e; font-size: 0.65rem; color: #2d8b8b; }
+  .combo-mono .prompt span { color: #a8dadc; }
+
+  /* ═══════════════════════════════════════
+     3. Desert Rose × Editorial
+  ═══════════════════════════════════════ */
+  .combo-editorial {
+    background: #fdf8f4;
+    border: 1px solid #e0cfc4;
+  }
+  .combo-editorial .tag-row { background: #f5ede6; border-bottom: 1px solid #e0cfc4; }
+  .combo-editorial .tag.palette { background: #d4a5a5; color: #5d2e46; }
+  .combo-editorial .tag.style { background: transparent; color: #b87d6d; border: 1px solid #d4a5a5; }
+  .combo-editorial .body { padding: 1.75rem; }
+  .combo-editorial .issue { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600; color: #b87d6d; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .combo-editorial .issue::after { content: ''; flex: 1; height: 1px; background: #e0cfc4; }
+  .combo-editorial h2 { font-family: 'Gelasio', Georgia, serif; font-size: 1.5rem; font-style: italic; color: #2a1520; line-height: 1.25; margin-bottom: 0.6rem; }
+  .combo-editorial .byline { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: #b87d6d; margin-bottom: 0.75rem; letter-spacing: 0.04em; }
+  .combo-editorial p { font-family: 'Gelasio', Georgia, serif; font-size: 0.82rem; color: #4a3040; line-height: 1.7; margin-bottom: 1.25rem; }
+  .combo-editorial .btn { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600; color: #5d2e46; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid #5d2e46; padding-bottom: 1px; display: inline-block; cursor: default; }
+
+  /* ═══════════════════════════════════════
+     4. Tech Innovation × Dramatic
+  ═══════════════════════════════════════ */
+  .combo-dramatic {
+    background: #09090b;
+    border: 1px solid #1a1a2e;
+    position: relative;
+    overflow: hidden;
+  }
+  .combo-dramatic::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0066ff, #00ffff, #0066ff);
+  }
+  .combo-dramatic .tag-row { background: #050507; border-bottom: 1px solid #1a1a2e; }
+  .combo-dramatic .tag.palette { background: #001a44; color: #0066ff; border: 1px solid #0066ff44; }
+  .combo-dramatic .tag.style { background: transparent; color: #8B5CF6; border: 1px solid #8B5CF644; }
+  .combo-dramatic .body { padding: 1.75rem; }
+  .combo-dramatic .eyebrow { font-family: 'Outfit', sans-serif; font-size: 0.58rem; font-weight: 400; color: #0066ff; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .combo-dramatic h2 { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 900; color: #ffffff; line-height: 1.05; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+  .combo-dramatic h2 span { color: #00ffff; }
+  .combo-dramatic p { font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 400; color: #666; line-height: 1.6; margin-bottom: 1.25rem; }
+  .combo-dramatic .btn { font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 700; padding: 0.6rem 1.4rem; background: #0066ff; color: #fff; border-radius: 3px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; cursor: default; }
+
+  /* ═══════════════════════════════════════
+     5. Forest Canopy × Luxury
+  ═══════════════════════════════════════ */
+  .combo-luxury {
+    background: #1a2e1a;
+    border: 1px solid #2d4a2b;
+  }
+  .combo-luxury .tag-row { background: #111f11; border-bottom: 1px solid #2d4a2b; }
+  .combo-luxury .tag.palette { background: #2d4a2b; color: #a4ac86; }
+  .combo-luxury .tag.style { background: transparent; color: #7d8471; border: 1px solid #3d5a3b; }
+  .combo-luxury .body { padding: 1.75rem; }
+  .combo-luxury .rule { height: 1px; background: #a4ac8644; margin-bottom: 1.25rem; }
+  .combo-luxury h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; font-weight: 700; color: #faf9f6; line-height: 1; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .combo-luxury .sub { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 400; color: #a4ac86; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.85rem; }
+  .combo-luxury p { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 300; color: #7d8471; line-height: 1.7; margin-bottom: 1.25rem; letter-spacing: 0.02em; }
+  .combo-luxury .btn { font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600; padding: 0.55rem 1.4rem; background: transparent; color: #a4ac86; border: 1px solid #a4ac86; letter-spacing: 0.12em; text-transform: uppercase; display: inline-block; cursor: default; }
+
+  /* ═══════════════════════════════════════
+     6. Sunset Boulevard × Neobrutalism
+  ═══════════════════════════════════════ */
+  .combo-neo {
+    background: #e9c46a;
+    border: 3px solid #264653;
+    box-shadow: 5px 5px 0 #264653;
+    border-radius: 6px;
+  }
+  .combo-neo .tag-row { background: #f4a261; border-bottom: 3px solid #264653; padding: 0.5rem 0.9rem; }
+  .combo-neo .tag.palette { background: #e76f51; color: #fff; border: 2px solid #264653; border-radius: 3px; }
+  .combo-neo .tag.style { background: #264653; color: #e9c46a; border-radius: 3px; }
+  .combo-neo .body { padding: 1.5rem; }
+  .combo-neo h2 { font-family: 'Inter', sans-serif; font-size: 1.8rem; font-weight: 900; color: #264653; line-height: 1.05; margin-bottom: 0.6rem; letter-spacing: -0.03em; text-transform: uppercase; }
+  .combo-neo p { font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600; color: #264653; line-height: 1.5; margin-bottom: 1.1rem; }
+  .combo-neo .btn { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 900; padding: 0.55rem 1.2rem; background: #e76f51; color: #fff; border: 2px solid #264653; border-radius: 3px; letter-spacing: 0.04em; text-transform: uppercase; display: inline-block; cursor: default; box-shadow: 3px 3px 0 #264653; }
+
+  /* ═══════════════════════════════════════
+     7. Arctic Frost × Glassmorphism
+  ═══════════════════════════════════════ */
+  .combo-glass-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #4a6fa5 0%, #d4e4f7 50%, #c0c0c0 100%);
+    padding: 1px;
+  }
+  .combo-glass {
+    border-radius: 11px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .combo-glass .tag-row { background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .combo-glass .tag.palette { background: rgba(212,228,247,0.2); color: #d4e4f7; border: 1px solid rgba(212,228,247,0.3); }
+  .combo-glass .tag.style { background: rgba(74,111,165,0.2); color: #a8c8f0; border: 1px solid rgba(74,111,165,0.3); }
+  .combo-glass .body { padding: 1.75rem; }
+  .combo-glass .eyebrow { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.6rem; font-weight: 600; color: rgba(212,228,247,0.7); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .combo-glass h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 0.7rem; }
+  .combo-glass p { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 400; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 1.25rem; }
+  .combo-glass .btn { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.7rem; font-weight: 700; padding: 0.55rem 1.3rem; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; letter-spacing: 0.04em; display: inline-block; cursor: default; backdrop-filter: blur(10px); }
+
+  /* ═══════════════════════════════════════
+     8. Golden Hour × Elegant
+  ═══════════════════════════════════════ */
+  .combo-elegant {
+    background: #fdf8f0;
+    border: 1px solid #d4b896;
+  }
+  .combo-elegant .tag-row { background: #f5ead8; border-bottom: 1px solid #d4b896; }
+  .combo-elegant .tag.palette { background: #f4a900; color: #2a200a; }
+  .combo-elegant .tag.style { background: transparent; color: #c1666b; border: 1px solid #d4b896; }
+  .combo-elegant .body { padding: 1.75rem; }
+  .combo-elegant .ornament { text-align: center; color: #d4b896; font-size: 1rem; margin-bottom: 0.75rem; letter-spacing: 0.3em; }
+  .combo-elegant h2 { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700; color: #2a200a; line-height: 1.2; margin-bottom: 0.3rem; text-align: center; }
+  .combo-elegant .tagline { font-family: 'Playfair Display', serif; font-size: 0.82rem; font-style: italic; color: #c1666b; text-align: center; margin-bottom: 0.85rem; }
+  .combo-elegant .rule { height: 1px; background: linear-gradient(90deg, transparent, #d4b896, transparent); margin-bottom: 0.85rem; }
+  .combo-elegant p { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 300; color: #5a4030; line-height: 1.75; margin-bottom: 1.25rem; text-align: center; }
+  .combo-elegant .btn { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; color: #4a403a; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.5rem 1.4rem; border: 1px solid #d4b896; border-radius: 2px; display: block; text-align: center; cursor: default; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Theme × Style Combinations</h1>
+  <p>palette + typeui — 8 distinct pairings</p>
+</header>
+<div class="grid">
+
+  <!-- 1. Midnight Galaxy × Cosmic -->
+  <div class="card combo-cosmic">
+    <div class="tag-row">
+      <span class="tag palette">Midnight Galaxy</span>
+      <span class="tag style">× Cosmic</span>
+    </div>
+    <div class="body">
+      <div class="eyebrow">Personal Skills Library</div>
+      <h2>Your Command Center</h2>
+      <p>86 tools for thinking, creating, and shipping. Each one ready to deploy.</p>
+      <span class="btn">EXPLORE SKILLS</span>
+      <div class="dots">
+        <div class="dot" style="background:#2b1e3e;border:1px solid #4a4e8f"></div>
+        <div class="dot" style="background:#4a4e8f"></div>
+        <div class="dot" style="background:#a490c2"></div>
+        <div class="dot" style="background:#e6e6fa"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Ocean Depths × Mono -->
+  <div class="card combo-mono">
+    <div class="tag-row">
+      <span class="tag palette">Ocean Depths</span>
+      <span class="tag style">× Mono</span>
+    </div>
+    <div class="body">
+      <div class="eyebrow">// personal_skills_library</div>
+      <h2>86 tools.<br>Zero noise.</h2>
+      <p>A structured index of every skill in your arsenal. Search, filter, deploy.</p>
+      <span class="btn">ls -la skills/</span>
+      <div class="prompt">~ <span>browse_skills --filter all</span></div>
+    </div>
+  </div>
+
+  <!-- 3. Desert Rose × Editorial -->
+  <div class="card combo-editorial">
+    <div class="tag-row">
+      <span class="tag palette">Desert Rose</span>
+      <span class="tag style">× Editorial</span>
+    </div>
+    <div class="body">
+      <div class="issue">Personal Skills — Vol. I</div>
+      <h2>A Library Built for One</h2>
+      <div class="byline">86 skills · curated · yours</div>
+      <p>Every tool you reach for, organized and waiting. A working library, not a filing cabinet.</p>
+      <span class="btn">Read the collection →</span>
+    </div>
+  </div>
+
+  <!-- 4. Tech Innovation × Dramatic -->
+  <div class="card combo-dramatic">
+    <div class="tag-row">
+      <span class="tag palette">Tech Innovation</span>
+      <span class="tag style">× Dramatic</span>
+    </div>
+    <div class="body">
+      <div class="eyebrow">Personal Skills Library</div>
+      <h2>86 <span>Skills.</span><br>One System.</h2>
+      <p>Everything you need to think faster, build better, and ship more — organized and searchable.</p>
+      <span class="btn">Open Library</span>
+    </div>
+  </div>
+
+  <!-- 5. Forest Canopy × Luxury -->
+  <div class="card combo-luxury">
+    <div class="tag-row">
+      <span class="tag palette">Forest Canopy</span>
+      <span class="tag style">× Luxury</span>
+    </div>
+    <div class="body">
+      <div class="rule"></div>
+      <h2>Personal<br>Skills</h2>
+      <div class="sub">A Curated Library</div>
+      <p>Eighty-six tools, each chosen with purpose. A private reference system built to last.</p>
+      <span class="btn">Enter the Library</span>
+    </div>
+  </div>
+
+  <!-- 6. Sunset Boulevard × Neobrutalism -->
+  <div class="card combo-neo">
+    <div class="tag-row">
+      <span class="tag palette">Sunset Boulevard</span>
+      <span class="tag style">× Neobrutalism</span>
+    </div>
+    <div class="body">
+      <h2>86 Skills.<br>No Excuses.</h2>
+      <p>Pick a skill. Use it. Get stuff done. That's the whole point.</p>
+      <span class="btn">Let's Go →</span>
+    </div>
+  </div>
+
+  <!-- 7. Arctic Frost × Glassmorphism -->
+  <div class="combo-glass-wrap">
+    <div class="card combo-glass">
+      <div class="tag-row">
+        <span class="tag palette">Arctic Frost</span>
+        <span class="tag style">× Glassmorphism</span>
+      </div>
+      <div class="body">
+        <div class="eyebrow">Personal Skills Library</div>
+        <h2>Clarity at Scale</h2>
+        <p>86 tools rendered in clean glass. Every skill visible, nothing in the way.</p>
+        <span class="btn">Browse Skills</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Golden Hour × Elegant -->
+  <div class="card combo-elegant">
+    <div class="tag-row">
+      <span class="tag palette">Golden Hour</span>
+      <span class="tag style">× Elegant</span>
+    </div>
+    <div class="body">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>Personal Skills Library</h2>
+      <div class="tagline">A collection assembled with care</div>
+      <div class="rule"></div>
+      <p>Eighty-six skills, each one purposeful. A private library for doing your best work.</p>
+      <span class="btn">Enter the Collection</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
