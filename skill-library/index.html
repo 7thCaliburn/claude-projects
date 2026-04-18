@@ -42,9 +42,13 @@ body { background: var(--bg); color: var(--ivory); font-family: 'Inter', sans-se
 
 /* ── START HERE ── */
 .start-here { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; }
+.section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 0.25rem; }
 .section-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: var(--olive); margin-bottom: 0.3rem; }
-.section-title { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0.25rem; }
-.section-sub { font-size: 0.88rem; color: var(--text-body); margin-bottom: 1.25rem; }
+.section-title { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 0; }
+.section-sub { font-size: 0.88rem; color: var(--text-body); margin-bottom: 1.25rem; margin-top: 0.25rem; }
+.refresh-btn { font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); background: none; border: 1px solid var(--border); padding: 0.3rem 0.75rem; cursor: pointer; transition: color 0.15s, border-color 0.15s; }
+.refresh-btn:hover { color: var(--olive); border-color: var(--olive); }
+.amp-date { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 400; color: var(--sage); margin-left: 0.6rem; letter-spacing: 0; text-transform: none; }
 .amp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.5rem; margin-bottom: 0; }
 .amp-card { display: flex; gap: 1rem; align-items: center; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--border); }
 .amp-card:hover { border-color: var(--olive); }
@@ -159,67 +163,71 @@ footer p { font-family: 'Oswald', sans-serif; font-size: 0.78rem; font-weight: 3
 
 <!-- START HERE -->
 <section class="start-here" id="start-here">
-  <div class="section-label">Recently Added</div>
-  <h2 class="section-title">New Skills</h2>
-  <p class="section-sub">Your most recently added skills, newest first.</p>
-  <div class="amp-grid">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Recently Added</div>
+      <h2 class="section-title">New Skills</h2>
+    </div>
+    <button class="refresh-btn" id="refresh-btn" onclick="refreshNewest()">↻ Refresh</button>
+  </div>
+  <p class="section-sub">Your most recently added skills, newest first. After adding a new skill, run build.js then click Refresh.</p>
+  <div class="amp-grid" id="newest-grid">
     <div class="amp-card">
       <div class="amp-num">01</div>
       <div class="amp-body">
-        <div class="amp-name">session-prep-AI</div>
+        <div class="amp-name">session-prep-AI<span class="amp-date">Apr 19</span></div>
         <div class="amp-desc">Builds a researched, accuracy-audited CFR-style lesson for the "Learning AI Effectively" course before any teaching begins.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">02</div>
       <div class="amp-body">
-        <div class="amp-name">substack-posts</div>
+        <div class="amp-name">substack-posts<span class="amp-date">Apr 18</span></div>
         <div class="amp-desc">Downloads Substack long-form posts to Obsidian as markdown — free posts without a cookie, paid content with one.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">03</div>
       <div class="amp-body">
-        <div class="amp-name">substack-notes</div>
+        <div class="amp-name">substack-notes<span class="amp-date">Apr 18</span></div>
         <div class="amp-desc">Downloads Substack Notes from any profile's Activity tab to markdown files in Obsidian.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">04</div>
       <div class="amp-body">
-        <div class="amp-name">contract-first</div>
+        <div class="amp-name">contract-first<span class="amp-date">Apr 18</span></div>
         <div class="amp-desc">Forces bilateral agreement on intent before any output is generated, eliminating one-way broadcast on ambiguous or high-stakes tasks.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">05</div>
       <div class="amp-body">
-        <div class="amp-name">program-library-builder</div>
+        <div class="amp-name">program-library-builder<span class="amp-date">Apr 18</span></div>
         <div class="amp-desc">Transforms a zip of Claude skills into a branded, searchable HTML index site and markdown walkthrough for customer-facing program libraries.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">06</div>
       <div class="amp-body">
-        <div class="amp-name">wiki-batch-orchestrator</div>
+        <div class="amp-name">wiki-batch-orchestrator<span class="amp-date">Apr 17</span></div>
         <div class="amp-desc">State machine that runs wiki ingest batches, audits output, rolls back bad pages, and stops on systemic failures.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">07</div>
       <div class="amp-body">
-        <div class="amp-name">wiki-query</div>
+        <div class="amp-name">wiki-query<span class="amp-date">Apr 17</span></div>
         <div class="amp-desc">Queries your personal wiki with natural questions or analysis templates to surface patterns, gaps, and contradictions across your knowledge base.</div>
       </div>
     </div>
     <div class="amp-card">
       <div class="amp-num">08</div>
       <div class="amp-body">
-        <div class="amp-name">wiki-audit</div>
+        <div class="amp-name">wiki-audit<span class="amp-date">Apr 16</span></div>
         <div class="amp-desc">Audits wiki pages from a batch run and returns structured PASS/FAIL results with failure categories per page.</div>
       </div>
     </div></div>
-
 </section>
 
 <!-- DIRECTORY -->
@@ -705,6 +713,37 @@ function handleSearch(q) {
 function checkNoResults() {
   const anyVisible = document.querySelectorAll('.skill-row:not(.hidden)').length > 0;
   document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
+}
+
+// ── Refresh newest skills ──────────────────────────────────
+function refreshNewest() {
+  const btn = document.getElementById('refresh-btn');
+  btn.textContent = '↻ Loading...';
+  btn.disabled = true;
+  fetch('https://raw.githubusercontent.com/7thCaliburn/claude-projects/main/skill-library/skills-data.json?t=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      const newest = data
+        .filter(s => s.mtime > 0)
+        .sort((a, b) => b.mtime - a.mtime)
+        .slice(0, 8);
+      document.getElementById('newest-grid').innerHTML = newest.map((s, i) => {
+        const d = s.mtime ? new Date(s.mtime).toLocaleDateString('en-US', {month:'short', day:'numeric'}) : '';
+        return `<div class="amp-card">
+          <div class="amp-num">${String(i+1).padStart(2,'0')}</div>
+          <div class="amp-body">
+            <div class="amp-name">${s.name}${d ? '<span class="amp-date">'+d+'</span>' : ''}</div>
+            <div class="amp-desc">${s.description}</div>
+          </div>
+        </div>`;
+      }).join('');
+      btn.textContent = '✓ Updated';
+      setTimeout(() => { btn.textContent = '↻ Refresh'; btn.disabled = false; }, 1500);
+    })
+    .catch(() => {
+      btn.textContent = '✗ Failed';
+      setTimeout(() => { btn.textContent = '↻ Refresh'; btn.disabled = false; }, 1500);
+    });
 }
 
 // ── Init ──────────────────────────────────────────────────

@@ -1,0 +1,518 @@
+[
+  {
+    "slug": "action-guide",
+    "name": "action-guide",
+    "description": "Converts a \"Steal Our Winners\" interview transcript into a structured implementation guide using Problem/Solution/Steps/Benefits/Case Study format.",
+    "mtime": 1772718104918
+  },
+  {
+    "slug": "algorithmic-art",
+    "name": "algorithmic-art",
+    "description": "Generates original code-driven visual art — flow fields, particle systems, geometric patterns — using p5.js with seeded randomness.",
+    "mtime": 1768392829572
+  },
+  {
+    "slug": "brainstorming-skill",
+    "name": "brainstorming-skill",
+    "description": "Applies 30+ research-validated prompt patterns across 14 categories to generate structured ideas for any creative or strategic problem.",
+    "mtime": 1776186150067
+  },
+  {
+    "slug": "brand-guidelines",
+    "name": "brand-guidelines",
+    "description": "Applies Anthropic's official brand colors and typography to any artifact that needs Anthropic's visual identity.",
+    "mtime": 1768392829574
+  },
+  {
+    "slug": "canvas-design",
+    "name": "canvas-design",
+    "description": "Creates original static visual designs — posters, art, layouts — exported as PNG and PDF using design philosophy principles.",
+    "mtime": 1768392829627
+  },
+  {
+    "slug": "cfr-update-checker",
+    "name": "CFR Update Checker",
+    "description": "Checks whether local CFR Education \"Regions of the World\" files are current with the live website.",
+    "mtime": 1770326618138
+  },
+  {
+    "slug": "cfr-voice-OG",
+    "name": "cfr-voice-OG",
+    "description": "Rewrites drafts in the original CFR house style: plain declarative sentences, no metaphors, every sentence earns its place.",
+    "mtime": 1773253522425
+  },
+  {
+    "slug": "cfr-voice",
+    "name": "cfr-voice",
+    "description": "Rewrites content in CFR's Coursera voice — authoritative, balanced, educational — used in the Global Affairs curriculum.",
+    "mtime": 1773308531030
+  },
+  {
+    "slug": "challenge-posts",
+    "name": "challenge-posts",
+    "description": "Captures Facebook challenge posts from a Google Doc and compiles them into an Obsidian note with images and links.",
+    "mtime": 1772136759400
+  },
+  {
+    "slug": "content-creator",
+    "name": "content-creator",
+    "description": "Produces SEO-optimized marketing content with consistent brand voice using built-in frameworks for blogs, social media, and content calendars.",
+    "mtime": 1768392830083
+  },
+  {
+    "slug": "content-research-writer",
+    "name": "content-research-writer",
+    "description": "Researches, cites, and iterates on long-form content in real time — covering outlines, hooks, and section-by-section feedback.",
+    "mtime": 1768392830084
+  },
+  {
+    "slug": "context-fundamentals",
+    "name": "context-fundamentals",
+    "description": "Explains what a language model's context window is and what it contains: instructions, tools, history, retrieved docs, and outputs.",
+    "mtime": 1776187912895
+  },
+  {
+    "slug": "contract-first",
+    "name": "contract-first",
+    "description": "Forces bilateral agreement on intent before any output is generated, eliminating one-way broadcast on ambiguous or high-stakes tasks.",
+    "mtime": 1776515024635
+  },
+  {
+    "slug": "copy-polish",
+    "name": "copy-polish",
+    "description": "Final-pass skill for persuasive copy — removes AI writing tells and tightens flow without changing the structure or argument.",
+    "mtime": 1775235381576
+  },
+  {
+    "slug": "customer-response",
+    "name": "customer-response",
+    "description": "Drafts copy-paste-ready Strategic Profits customer responses and community announcements, routing to the right specialist agent automatically.",
+    "mtime": 1775050136699
+  },
+  {
+    "slug": "daily-briefing",
+    "name": "daily-briefing",
+    "description": "Delivers your daily schedule through an upbeat executive assistant persona that makes the day feel manageable.",
+    "mtime": 1770911569632
+  },
+  {
+    "slug": "daily-planning",
+    "name": "daily-planning",
+    "description": "Answers natural-language questions about your Google Calendar and ClickUp tasks — schedule, availability, and urgent items.",
+    "mtime": 1770990426084
+  },
+  {
+    "slug": "delete-nul-files",
+    "name": "delete-nul-files",
+    "description": "Deletes Windows reserved-name 'nul' files that trigger \"Invalid MS-DOS function\" errors using UNC path handling.",
+    "mtime": 1770215488117
+  },
+  {
+    "slug": "docx",
+    "name": "docx",
+    "description": "Creates, edits, and analyzes Word documents with support for tracked changes, comments, and formatting preservation.",
+    "mtime": 1768392830220
+  },
+  {
+    "slug": "facebook-automation",
+    "name": "Facebook Automation",
+    "description": "Automates Facebook Page management — posts, scheduling, video uploads, and Messenger engagement — via Composio.",
+    "mtime": 1776186536924
+  },
+  {
+    "slug": "file-organizer",
+    "name": "file-organizer",
+    "description": "Reorganizes files and folders by understanding context, finding duplicates, and suggesting cleaner structures across your machine.",
+    "mtime": 1768392830282
+  },
+  {
+    "slug": "fireflies-downloader",
+    "name": "fireflies-downloader",
+    "description": "Bulk-downloads Fireflies AI meeting transcripts, summaries, and action items to Obsidian via GraphQL API.",
+    "mtime": 1768392830282
+  },
+  {
+    "slug": "fm-onboarding-update",
+    "name": "fm-onboarding-update",
+    "description": "Checks for Force Multiplier onboarding updates and refreshes the FM client report and onboarding sheet.",
+    "mtime": 1773849867025
+  },
+  {
+    "slug": "fsoe-argument-refiner",
+    "name": "fsoe-argument-refiner",
+    "description": "Takes an FSOE question, argues the strongest defensible position with real facts, then refines it through debate under pressure.",
+    "mtime": 1772225306016
+  },
+  {
+    "slug": "fsoe-devils-advocate",
+    "name": "fsoe-devils-advocate",
+    "description": "Argues the opposing side of any FSOE position using real counterarguments — never fabricates — to force you to defeat legitimate objections.",
+    "mtime": 1772225564956
+  },
+  {
+    "slug": "fsoe-exam-prep",
+    "name": "fsoe-exam-prep",
+    "description": "Builds a complete FSOE Written Test prep package: 80/20 Master Reference, Pocket Card, Knowledge List, Routing Exercise, and Study Plan.",
+    "mtime": 1773319781233
+  },
+  {
+    "slug": "fsoe-ia-agreement",
+    "name": "fsoe-ia-agreement",
+    "description": "Builds FSOE IA Pocket Card entries for the 7 key international agreements — UNCLOS, ASEAN Charter, UN Charter, and more.",
+    "mtime": 1773253403252
+  },
+  {
+    "slug": "fsoe-lecture-teacher",
+    "name": "fsoe-lecture-teacher",
+    "description": "Converts Ateneo-FSOE lecture transcripts into exam-optimized teaching documents using a Dispatcher/Manager agent pattern.",
+    "mtime": 1772380662476
+  },
+  {
+    "slug": "fsoe-primer-writer",
+    "name": "fsoe-primer-writer",
+    "description": "Generates scannable, question-driven exam primers from an FSOE question bank file, organized in topic batches with gatechecks.",
+    "mtime": 1773439540568
+  },
+  {
+    "slug": "fsoe-random-question",
+    "name": "fsoe-random-question",
+    "description": "Picks a random FSOE past exam question from a specified topic and starts a timed practice session.",
+    "mtime": 1773516469708
+  },
+  {
+    "slug": "fsoe-sparring-partner",
+    "name": "fsoe-sparring-partner",
+    "description": "Reads patterns in your FSOE arguments, identifies gaps, and pushes back with evidence to sharpen your reasoning.",
+    "mtime": 1772224523981
+  },
+  {
+    "slug": "fsoe-topic-summary",
+    "name": "fsoe-topic-summary",
+    "description": "Produces a Why/Goal/How exam summary from any FSOE source material in Ria Santos voice — sharp, sassy, and memorable.",
+    "mtime": 1774046209320
+  },
+  {
+    "slug": "fsoe-transcript-cleaner",
+    "name": "fsoe-transcript-cleaner",
+    "description": "Cleans raw YouTube auto-caption transcripts from Draft.md and saves them as structured FSOE study documents.",
+    "mtime": 1773504694720
+  },
+  {
+    "slug": "fsoe-writing-coach",
+    "name": "fsoe-writing-coach",
+    "description": "Coaches diplomatic essay writing for the Philippine Foreign Service Officer Examination, including drafts, knowledge dumps, and analytical feedback.",
+    "mtime": 1771103287972
+  },
+  {
+    "slug": "github-pages",
+    "name": "github-pages",
+    "description": "Deploys HTML files to GitHub Pages under the personal 7thCaliburn account — not for SP/work deployments.",
+    "mtime": 1773945084836
+  },
+  {
+    "slug": "google-drive",
+    "name": "google-drive",
+    "description": "Browses, searches, and reads files from Google Drive and Google Docs/Sheets via MCP integration.",
+    "mtime": 1768392830290
+  },
+  {
+    "slug": "great-leads-check",
+    "name": "great-leads-check",
+    "description": "Evaluates any lead against the Great Leads framework, requiring correct identification of what's being sold before scoring.",
+    "mtime": 1775495267051
+  },
+  {
+    "slug": "great-leads",
+    "name": "great-leads",
+    "description": "Applies Masterson and Forde's 6-lead-type framework to choose and write the right lead for any sales message.",
+    "mtime": 1775239854439
+  },
+  {
+    "slug": "humanizer",
+    "name": "humanizer",
+    "description": "Removes AI writing patterns — em dash overuse, filler phrases, passive voice, vague attributions — based on Wikipedia's comprehensive AI-writing guide.",
+    "mtime": 1775232894784
+  },
+  {
+    "slug": "image-enhancer",
+    "name": "image-enhancer",
+    "description": "Improves image resolution, sharpness, and clarity — especially for screenshots destined for presentations or social media.",
+    "mtime": 1768392830292
+  },
+  {
+    "slug": "image-to-markdown",
+    "name": "image-to-markdown",
+    "description": "Extracts text from images and screenshots using GPU-accelerated DeepSeek OCR-2 and outputs clean markdown.",
+    "mtime": 1770384164218
+  },
+  {
+    "slug": "interface-design",
+    "name": "interface-design",
+    "description": "Designs dashboards, admin panels, and interactive product interfaces — not marketing pages or landing pages.",
+    "mtime": 1775499089650
+  },
+  {
+    "slug": "internal-comms",
+    "name": "internal-comms",
+    "description": "Writes internal communications — status reports, leadership updates, incident reports, newsletters — in company-approved formats.",
+    "mtime": 1768392830296
+  },
+  {
+    "slug": "lead-research-assistant",
+    "name": "lead-research-assistant",
+    "description": "Identifies high-quality leads by analyzing your business, searching for target companies, and suggesting contact strategies.",
+    "mtime": 1768392830302
+  },
+  {
+    "slug": "mcp-builder",
+    "name": "mcp-builder",
+    "description": "Guides building well-designed MCP servers in Python (FastMCP) or TypeScript to connect LLMs to external APIs.",
+    "mtime": 1768392830302
+  },
+  {
+    "slug": "meeting-insights-analyzer",
+    "name": "meeting-insights-analyzer",
+    "description": "Analyzes meeting transcripts to surface behavioral patterns — conflict avoidance, filler words, missed listening moments — with actionable feedback.",
+    "mtime": 1768392830312
+  },
+  {
+    "slug": "morning-mission-control",
+    "name": "launch-mission-control",
+    "description": "Launches the Morning Mission Control dashboard with your daily schedule, tasks, and priorities in one view.",
+    "mtime": 1773873031919
+  },
+  {
+    "slug": "outcome-writer",
+    "name": "outcome-writer",
+    "description": "Uses Rich Schefren's outcome-first method to define or rewrite the receiver experience section of any Claude skill.",
+    "mtime": 1773165478315
+  },
+  {
+    "slug": "patina",
+    "name": "patina",
+    "description": "Removes AI writing patterns across four languages (Korean, English, Chinese, Japanese) using a plugin-based two-phase pipeline.",
+    "mtime": 1775233163819
+  },
+  {
+    "slug": "pdf-edit",
+    "name": "pdf-edit",
+    "description": "Extracts text and tables, creates, merges, and splits text-based PDFs — not for scanned documents (use pdf-ocr-to-markdown for those).",
+    "mtime": 1771268952186
+  },
+  {
+    "slug": "pdf-ocr-to-markdown",
+    "name": "pdf-ocr-to-markdown",
+    "description": "Converts PDFs to markdown using 3-tier auto-detection: instant text extraction, fast OCR, or DeepSeek OCR-2 for handwriting and complex layouts.",
+    "mtime": 1772490277584
+  },
+  {
+    "slug": "personal-transcript-cleaner-agents",
+    "name": "personal-transcript-cleaner-agents",
+    "description": "Two-Haiku-agent version of the transcript cleaner — one cleans, one verifies — with stronger guardrails against paraphrasing.",
+    "mtime": 1776092394669
+  },
+  {
+    "slug": "personal-transcript-cleaner",
+    "name": "personal-transcript-cleaner",
+    "description": "Cleans raw YouTube auto-caption transcripts from Personal/raw/Transcripts/Draft.md and saves them as structured documents.",
+    "mtime": 1776096265183
+  },
+  {
+    "slug": "plain-language-rewriter",
+    "name": "plain-language-rewriter",
+    "description": "Strips authoritative vagueness from dense study documents and runs a critic agent second pass for voice cleanup.",
+    "mtime": 1773570879235
+  },
+  {
+    "slug": "playwright-skill",
+    "name": "Playwright Browser Automation",
+    "description": "Automates any browser task with Playwright — form fills, screenshots, login flows, link checks, and responsive design validation.",
+    "mtime": 1773939800514
+  },
+  {
+    "slug": "pptx",
+    "name": "pptx",
+    "description": "Creates, edits, and analyzes PowerPoint presentations with support for layouts, speaker notes, and content modification.",
+    "mtime": 1768392830764
+  },
+  {
+    "slug": "program-library-builder",
+    "name": "program-library-builder",
+    "description": "Transforms a zip of Claude skills into a branded, searchable HTML index site and markdown walkthrough for customer-facing program libraries.",
+    "mtime": 1776462251864
+  },
+  {
+    "slug": "qa-database",
+    "name": "qa-database",
+    "description": "Extracts customer questions and answers from community post screenshots and appends them to an Obsidian product QA database.",
+    "mtime": 1773245622648
+  },
+  {
+    "slug": "qec-converter",
+    "name": "qec-converter",
+    "description": "Restructures dense reference docs into QEC format — Question/Evidence/Conclusion blocks with elaborative interrogation callouts — for active recall study.",
+    "mtime": 1773579747946
+  },
+  {
+    "slug": "scriptwriting-methodology",
+    "name": "scriptwriting-methodology",
+    "description": "Applies direct response frameworks — DR formula, PAS, AIDA, hook formulas — to video scripts, sponsored content, and conversion copy.",
+    "mtime": 1770810488545
+  },
+  {
+    "slug": "session-prep-AI",
+    "name": "session-prep-AI",
+    "description": "Builds a researched, accuracy-audited CFR-style lesson for the \"Learning AI Effectively\" course before any teaching begins.",
+    "mtime": 1776541889213
+  },
+  {
+    "slug": "skill-creator",
+    "name": "skill-creator",
+    "description": "Creates, edits, and benchmarks Claude skills — including evals, variance analysis, and trigger description optimization.",
+    "mtime": 1773310080949
+  },
+  {
+    "slug": "skill-developer",
+    "name": "skill-developer",
+    "description": "Builds Claude Code skills following Anthropic best practices, covering YAML frontmatter, trigger types, hooks, and the 500-line rule.",
+    "mtime": 1776186455041
+  },
+  {
+    "slug": "slack-gif-creator",
+    "name": "slack-gif-creator",
+    "description": "Creates animated GIFs sized and optimized for Slack, with constraint validation and animation concept guidance.",
+    "mtime": 1768392830793
+  },
+  {
+    "slug": "substack-notes",
+    "name": "substack-notes",
+    "description": "Downloads Substack Notes from any profile's Activity tab to markdown files in Obsidian.",
+    "mtime": 1776522192442
+  },
+  {
+    "slug": "substack-ocr",
+    "name": "substack-ocr",
+    "description": "Downloads images from Substack posts and converts them to clean markdown using GPU-accelerated DeepSeek OCR-2.",
+    "mtime": 1771191052091
+  },
+  {
+    "slug": "substack-posts",
+    "name": "substack-posts",
+    "description": "Downloads Substack long-form posts to Obsidian as markdown — free posts without a cookie, paid content with one.",
+    "mtime": 1776522211525
+  },
+  {
+    "slug": "theme-factory",
+    "name": "theme-factory",
+    "description": "Applies one of 10 preset visual themes — colors and fonts — to slides, docs, landing pages, or any HTML artifact.",
+    "mtime": 1772490339014
+  },
+  {
+    "slug": "thinking-partner",
+    "name": "thinking-partner",
+    "description": "Processes raw material (transcript, article, reaction) to find the connection you missed — not coaching, just sharp thinking.",
+    "mtime": 1776187942311
+  },
+  {
+    "slug": "trailer-checker",
+    "name": "trailer-checker",
+    "description": "Validates whether a trailer selected the most intriguing clips from an episode — feedback only, no rewriting.",
+    "mtime": 1770810497054
+  },
+  {
+    "slug": "trailer-creator",
+    "name": "trailer-creator",
+    "description": "Creates short-form video trailers for \"Steal Our Winners\" podcast episodes using a structured format from transcripts or soundbites.",
+    "mtime": 1768918576318
+  },
+  {
+    "slug": "trailer-generator",
+    "name": "trailer-generator",
+    "description": "Generates hook-driven short-form video trailers from interview transcripts using direct response copywriting — teases strategy without revealing the solution.",
+    "mtime": 1770810499361
+  },
+  {
+    "slug": "transcribe",
+    "name": "transcribe",
+    "description": "Transcribes audio and video to markdown and SRT using local faster-whisper with GPU acceleration and a pre-run gatecheck.",
+    "mtime": 1772490734947
+  },
+  {
+    "slug": "typeui-styles",
+    "name": "typeui-styles",
+    "description": "Shows available TypeUI visual styles and loads the chosen one for any HTML or web page build.",
+    "mtime": 1775503931033
+  },
+  {
+    "slug": "ui-design-system",
+    "name": "ui-design-system",
+    "description": "Generates design tokens, component documentation, and developer handoff materials for building consistent UI design systems.",
+    "mtime": 1768392830851
+  },
+  {
+    "slug": "ux-researcher-designer",
+    "name": "ux-researcher-designer",
+    "description": "Produces data-driven personas, journey maps, usability testing frameworks, and research synthesis for UX design and validation.",
+    "mtime": 1768392830854
+  },
+  {
+    "slug": "video-downloader",
+    "name": "video-downloader",
+    "description": "Downloads videos from YouTube and other platforms in your choice of format and quality for offline use or editing.",
+    "mtime": 1768392830855
+  },
+  {
+    "slug": "vocab-quiz-creator",
+    "name": "Vocab Quiz Creator",
+    "description": "Builds Dark Academia-themed vocabulary quizzes with mixed question types, keyboard shortcuts, and detailed wrong-answer review.",
+    "mtime": 1769120447530
+  },
+  {
+    "slug": "webapp-testing",
+    "name": "webapp-testing",
+    "description": "Tests local web apps with Playwright — frontend verification, UI debugging, screenshots, and browser log inspection.",
+    "mtime": 1768392830864
+  },
+  {
+    "slug": "wiki-audit",
+    "name": "wiki-audit",
+    "description": "Audits wiki pages from a batch run and returns structured PASS/FAIL results with failure categories per page.",
+    "mtime": 1776350809705
+  },
+  {
+    "slug": "wiki-batch-orchestrator",
+    "name": "wiki-batch-orchestrator",
+    "description": "State machine that runs wiki ingest batches, audits output, rolls back bad pages, and stops on systemic failures.",
+    "mtime": 1776432305658
+  },
+  {
+    "slug": "wiki-batch-run",
+    "name": "wiki-batch-run",
+    "description": "Executes one wiki ingest batch via batch_run.py and returns the result JSON — called by wiki-batch-orchestrator.",
+    "mtime": 1776350788641
+  },
+  {
+    "slug": "wiki-query",
+    "name": "wiki-query",
+    "description": "Queries your personal wiki with natural questions or analysis templates to surface patterns, gaps, and contradictions across your knowledge base.",
+    "mtime": 1776370517113
+  },
+  {
+    "slug": "wiki",
+    "name": "wiki",
+    "description": "Checks raw/ for unprocessed files and runs the full personal wiki ingestion workflow on confirmation.",
+    "mtime": 1776087579450
+  },
+  {
+    "slug": "xlsx",
+    "name": "xlsx",
+    "description": "Creates, reads, edits, and analyzes spreadsheets with formula support, formatting, and data visualization across xlsx, csv, and related formats.",
+    "mtime": 1768392831078
+  },
+  {
+    "slug": "zenithpro-qa-processor",
+    "name": "zenithpro-qa-processor",
+    "description": "Processes ZenithPro Q&A transcripts to refine upcoming lessons and mine Rich's answers, stories, and frameworks for reusable IP.",
+    "mtime": 1768392831080
+  }
+]
