@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forest Canopy — Style Combos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Abril+Fatface&family=Delius+Swash+Caps&family=Inter:wght@300;400;500;600;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; padding: 2.5rem; min-height: 100vh; }
+  header { text-align: center; margin-bottom: 2.5rem; }
+  header h1 { font-family: Inter, sans-serif; font-weight: 900; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; margin-bottom: 0.3rem; }
+  header p { font-family: Inter, sans-serif; font-size: 0.72rem; color: #555; letter-spacing: 0.06em; }
+  .palette-dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.75rem; }
+  .palette-dots .dot { width: 12px; height: 12px; border-radius: 50%; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.75rem; max-width: 1200px; margin: 0 auto; }
+  .tag-row { display: flex; gap: 0.4rem; padding: 0.6rem 1rem; align-items: center; }
+  .tag { font-family: Inter, sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 20px; }
+
+  /* ═══════════════════════════════════════
+     Forest Canopy × Modern (IBM Plex Serif)
+  ═══════════════════════════════════════ */
+  .combo-modern {
+    background: #faf9f6;
+    border: 1px solid #d0cdc6;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .combo-modern .tag-row { background: #f0ede8; border-bottom: 1px solid #d0cdc6; }
+  .combo-modern .tag.palette { background: #2d4a2b; color: #a4ac86; }
+  .combo-modern .tag.style { background: transparent; color: #7d8471; border: 1px solid #c0bdb6; }
+  .combo-modern .body { padding: 2rem; }
+  .combo-modern .issue-line { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+  .combo-modern .issue-line .rule { height: 2px; background: #2d4a2b; width: 28px; }
+  .combo-modern .issue-line span { font-family: 'IBM Plex Serif', serif; font-size: 0.65rem; font-style: italic; color: #7d8471; letter-spacing: 0.06em; }
+  .combo-modern h2 { font-family: 'IBM Plex Serif', serif; font-size: 2rem; font-weight: 700; color: #1a2e1a; line-height: 1.1; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+  .combo-modern .sub { font-family: 'IBM Plex Serif', serif; font-size: 0.95rem; font-style: italic; font-weight: 300; color: #7d8471; margin-bottom: 1rem; }
+  .combo-modern .divider { height: 1px; background: #d0cdc6; margin-bottom: 1rem; }
+  .combo-modern p { font-family: 'IBM Plex Serif', serif; font-size: 0.88rem; font-weight: 300; color: #4a4a40; line-height: 1.75; margin-bottom: 1.5rem; }
+  .combo-modern .footer { display: flex; align-items: center; justify-content: space-between; }
+  .combo-modern .btn { font-family: Inter, sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2d4a2b; border-bottom: 1.5px solid #2d4a2b; padding-bottom: 2px; cursor: default; }
+  .combo-modern .count { font-family: 'IBM Plex Serif', serif; font-size: 0.72rem; font-style: italic; color: #a4ac86; }
+
+  /* ═══════════════════════════════════════
+     Forest Canopy × Storytelling (Abril Fatface)
+  ═══════════════════════════════════════ */
+  .combo-story {
+    background: #f5f3ed;
+    border: 1px solid #c8c4b0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  .combo-story .tag-row { background: #ede9de; border-bottom: 1px solid #c8c4b0; }
+  .combo-story .tag.palette { background: #2d4a2b; color: #a4ac86; }
+  .combo-story .tag.style { background: transparent; color: #7d8471; border: 1px solid #c8c4b0; }
+  .combo-story .hero { background: #2d4a2b; padding: 2rem; position: relative; overflow: hidden; }
+  .combo-story .hero::after { content: ''; position: absolute; bottom: -30px; right: -30px; width: 120px; height: 120px; border-radius: 50%; background: rgba(164,172,134,0.15); }
+  .combo-story .hero .kicker { font-family: Inter, sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #a4ac86; margin-bottom: 0.6rem; }
+  .combo-story .hero h2 { font-family: 'Abril Fatface', serif; font-size: 2.4rem; color: #faf9f6; line-height: 1.05; margin-bottom: 0.5rem; }
+  .combo-story .hero .tagline { font-family: Inter, sans-serif; font-size: 0.78rem; font-weight: 300; color: #a4ac86; line-height: 1.5; }
+  .combo-story .body { padding: 1.5rem 2rem 2rem; }
+  .combo-story .chapter { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+  .combo-story .chapter-num { font-family: 'Abril Fatface', serif; font-size: 2rem; color: #c8c4b0; line-height: 1; flex-shrink: 0; }
+  .combo-story .chapter-text { }
+  .combo-story .chapter-title { font-family: Inter, sans-serif; font-size: 0.72rem; font-weight: 700; color: #2d4a2b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+  .combo-story .chapter-desc { font-family: Inter, sans-serif; font-size: 0.76rem; font-weight: 400; color: #7d8471; line-height: 1.55; }
+  .combo-story .btn { font-family: Inter, sans-serif; font-size: 0.7rem; font-weight: 700; padding: 0.6rem 1.4rem; background: #2d4a2b; color: #faf9f6; border-radius: 5px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-block; cursor: default; margin-top: 0.5rem; }
+
+  /* ═══════════════════════════════════════
+     Forest Canopy × Doodle (Delius Swash Caps)
+  ═══════════════════════════════════════ */
+  .combo-doodle {
+    background: #f7f5ee;
+    border: 2.5px solid #2d4a2b;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .combo-doodle .tag-row { background: #eee9db; border-bottom: 2px dashed #a4ac86; }
+  .combo-doodle .tag.palette { background: #2d4a2b; color: #faf9f6; border-radius: 20px; }
+  .combo-doodle .tag.style { background: #f9a620; color: #2d4a2b; border-radius: 20px; }
+  .combo-doodle .body { padding: 2rem; }
+  .combo-doodle .squiggle { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .combo-doodle h2 { font-family: 'Delius Swash Caps', cursive; font-size: 1.8rem; color: #2d4a2b; line-height: 1.2; margin-bottom: 0.5rem; }
+  .combo-doodle .stars { color: #f9a620; font-size: 0.9rem; margin-bottom: 0.75rem; letter-spacing: 0.1em; }
+  .combo-doodle p { font-family: 'Delius Swash Caps', cursive; font-size: 0.82rem; color: #4a5e3a; line-height: 1.75; margin-bottom: 1.5rem; }
+  .combo-doodle .skills-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .combo-doodle .skill-chip { font-family: 'Delius Swash Caps', cursive; font-size: 0.65rem; padding: 0.25rem 0.7rem; background: #fff; border: 1.5px solid #a4ac86; border-radius: 20px; color: #4a5e3a; }
+  .combo-doodle .btn { font-family: 'Delius Swash Caps', cursive; font-size: 0.82rem; padding: 0.6rem 1.4rem; background: #2d4a2b; color: #faf9f6; border-radius: 8px; display: inline-block; cursor: default; }
+  .combo-doodle .doodle-line { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: repeating-linear-gradient(90deg, #2d4a2b 0px, #2d4a2b 8px, transparent 8px, transparent 14px); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Forest Canopy</h1>
+  <p>Modern · Storytelling · Doodle</p>
+  <div class="palette-dots">
+    <div class="dot" style="background:#2d4a2b"></div>
+    <div class="dot" style="background:#7d8471"></div>
+    <div class="dot" style="background:#a4ac86"></div>
+    <div class="dot" style="background:#faf9f6;border:1px solid #ccc"></div>
+  </div>
+</header>
+
+<div class="grid">
+
+  <!-- Forest Canopy × Modern -->
+  <div class="combo-modern">
+    <div class="tag-row">
+      <span class="tag palette">Forest Canopy</span>
+      <span class="tag style">× Modern</span>
+    </div>
+    <div class="body">
+      <div class="issue-line"><div class="rule"></div><span>Personal Skills Library</span></div>
+      <h2>Your Working<br>Reference</h2>
+      <div class="sub">A library built for daily use</div>
+      <div class="divider"></div>
+      <p>Eighty-six tools, organized and searchable. The skills you reach for most, one click away.</p>
+      <div class="footer">
+        <span class="btn">Browse the collection →</span>
+        <span class="count">86 skills</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forest Canopy × Storytelling -->
+  <div class="combo-story">
+    <div class="tag-row">
+      <span class="tag palette">Forest Canopy</span>
+      <span class="tag style">× Storytelling</span>
+    </div>
+    <div class="hero">
+      <div class="kicker">Personal Skills Library</div>
+      <h2>Every Tool<br>You Need</h2>
+      <div class="tagline">86 skills, organized and ready to deploy</div>
+    </div>
+    <div class="body">
+      <div class="chapter">
+        <div class="chapter-num">01</div>
+        <div class="chapter-text">
+          <div class="chapter-title">Start Here</div>
+          <div class="chapter-desc">Amplifier skills that configure your whole system</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">02</div>
+        <div class="chapter-text">
+          <div class="chapter-title">Full Directory</div>
+          <div class="chapter-desc">Every skill, searchable and grouped by category</div>
+        </div>
+      </div>
+      <span class="btn">Open Library</span>
+    </div>
+  </div>
+
+  <!-- Forest Canopy × Doodle -->
+  <div class="combo-doodle">
+    <div class="tag-row">
+      <span class="tag palette">Forest Canopy</span>
+      <span class="tag style">× Doodle</span>
+    </div>
+    <div class="body">
+      <div class="squiggle">🌿</div>
+      <h2>My Personal Skill Garden</h2>
+      <div class="stars">✦ ✦ ✦</div>
+      <p>All my favourite tools in one cozy spot. Search, browse, and find exactly what you need.</p>
+      <div class="skills-list">
+        <span class="skill-chip">writing</span>
+        <span class="skill-chip">research</span>
+        <span class="skill-chip">design</span>
+        <span class="skill-chip">thinking</span>
+        <span class="skill-chip">+ 82 more</span>
+      </div>
+      <span class="btn">Let's explore! →</span>
+    </div>
+    <div class="doodle-line"></div>
+  </div>
+
+</div>
+</body>
+</html>
