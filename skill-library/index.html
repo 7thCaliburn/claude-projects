@@ -99,7 +99,8 @@ body { background: var(--bg); color: var(--ivory); font-family: 'Inter', sans-se
 .skill-row { display: grid; grid-template-columns: 240px 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); align-items: baseline; }
 .skill-row:first-child { border-top: 1px solid var(--border); }
 .skill-row.hidden { display: none; }
-.skill-name { font-family: 'Oswald', sans-serif; font-size: 0.97rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory2); }
+.skill-name { font-family: 'Oswald', sans-serif; font-size: 0.97rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory2); display: flex; align-items: center; gap: 0.5rem; }
+.new-badge { font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); background: var(--olive); padding: 0.1rem 0.4rem; border-radius: 2px; flex-shrink: 0; }
 .skill-desc { font-size: 1rem; color: var(--text-body); line-height: 1.55; }
 .no-results { font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); padding: 2rem 0; display: none; }
 
@@ -716,6 +717,54 @@ function checkNoResults() {
   document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
 }
 
+// ── Category keyword scorer ────────────────────────────────
+const ASSIGNED_SLUGS = new Set(["fsoe-argument-refiner","fsoe-devils-advocate","fsoe-exam-prep","fsoe-ia-agreement","fsoe-lecture-teacher","fsoe-primer-writer","fsoe-random-question","fsoe-sparring-partner","fsoe-topic-summary","fsoe-transcript-cleaner","fsoe-writing-coach","vocab-quiz-creator","action-guide","cfr-voice-OG","cfr-voice","cfr-update-checker","content-creator","content-research-writer","copy-polish","great-leads","great-leads-check","humanizer","internal-comms","outcome-writer","patina","plain-language-rewriter","scriptwriting-methodology","thinking-partner","brainstorming-skill","lead-research-assistant","meeting-insights-analyzer","qa-database","zenithpro-qa-processor","algorithmic-art","brand-guidelines","canvas-design","image-enhancer","interface-design","theme-factory","typeui-styles","ui-design-system","ux-researcher-designer","docx","file-organizer","image-to-markdown","pdf-edit","pdf-ocr-to-markdown","pptx","qec-converter","xlsx","personal-transcript-cleaner","personal-transcript-cleaner-agents","trailer-checker","trailer-creator","trailer-generator","transcribe","video-downloader","delete-nul-files","facebook-automation","fireflies-downloader","github-pages","google-drive","mcp-builder","playwright-skill","slack-gif-creator","webapp-testing","daily-briefing","daily-planning","fm-onboarding-update","morning-mission-control","session-prep-AI","wiki","wiki-audit","wiki-batch-orchestrator","wiki-batch-run","wiki-query","challenge-posts","customer-response","substack-notes","substack-ocr","substack-posts","context-fundamentals","contract-first","program-library-builder","skill-creator","skill-developer"]);
+
+const CATEGORY_KEYWORDS = {
+  'fsoe':        ['fsoe','exam','argument','oral','written','practice','timed','essay','study','debate','sparring','primer','lecture','vocab','quiz'],
+  'writing':     ['writing','write','copy','voice','content','lead','rewrite','humanizer','script','polish','patina','plain','language','narrative','tone'],
+  'research':    ['research','analysis','brainstorm','meeting','insights','database','qa','question','answer','investigate'],
+  'design':      ['design','visual','ui','ux','canvas','image','theme','interface','brand','style','art','algorithmic'],
+  'documents':   ['document','file','pdf','word','excel','powerpoint','pptx','docx','xlsx','markdown','ocr','convert','extract'],
+  'video':       ['video','audio','transcript','trailer','transcribe','download','media','caption','clip'],
+  'automation':  ['automation','browser','playwright','github','mcp','slack','api','facebook','webapp','deploy','test'],
+  'planning':    ['planning','daily','calendar','morning','session','briefing','mission','onboarding','schedule','prepare'],
+  'wiki':        ['wiki','knowledge','query','audit','batch','ingest','vault','note'],
+  'social':      ['social','substack','community','challenge','customer','response','post','publish','newsletter'],
+  'skill-tools': ['skill','context','contract','program','library','builder','creator','developer','workflow'],
+};
+
+function categorizeSkill(skill) {
+  const text = (skill.slug + ' ' + skill.name + ' ' + skill.description).toLowerCase();
+  let best = null, bestScore = -1;
+  for (const [catId, keywords] of Object.entries(CATEGORY_KEYWORDS)) {
+    const score = keywords.reduce((n, kw) => n + (text.includes(kw) ? 1 : 0), 0);
+    const slugBonus = text.startsWith(catId.replace('-tools','')) ? 2 : 0;
+    const total = score + slugBonus;
+    if (total > bestScore) { bestScore = total; best = catId; }
+  }
+  return best || 'skill-tools';
+}
+
+function injectNewSkills(allSkills) {
+  const newSkills = allSkills.filter(s => !ASSIGNED_SLUGS.has(s.slug));
+  if (!newSkills.length) return 0;
+  newSkills.forEach(skill => {
+    const catId = categorizeSkill(skill);
+    const container = document.querySelector(`#cat-${catId} .skill-rows`);
+    if (!container) return;
+    const row = document.createElement('div');
+    row.className = 'skill-row';
+    row.dataset.cat = catId;
+    row.dataset.slug = skill.slug;
+    row.innerHTML = `<div class="skill-name">${skill.name}<span class="new-badge">new</span></div><div class="skill-desc">${skill.description}</div>`;
+    container.appendChild(row);
+    ASSIGNED_SLUGS.add(skill.slug);
+  });
+  updateCounts();
+  return newSkills.length;
+}
+
 // ── Refresh newest skills ──────────────────────────────────
 function refreshNewest() {
   const btn = document.getElementById('refresh-btn');
@@ -738,8 +787,10 @@ function refreshNewest() {
           </div>
         </div>`;
       }).join('');
-      btn.textContent = '✓ Updated';
-      setTimeout(() => { btn.textContent = '↻ Refresh'; btn.disabled = false; }, 1500);
+      const added = injectNewSkills(data);
+      const msg = added > 0 ? `✓ ${added} new skill${added>1?'s':''} added` : '✓ Up to date';
+      btn.textContent = msg;
+      setTimeout(() => { btn.textContent = '↻ Refresh'; btn.disabled = false; }, 2000);
     })
     .catch(() => {
       btn.textContent = '✗ Failed';
