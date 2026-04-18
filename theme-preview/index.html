@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Factory — Color Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f0f0f0; padding: 2rem; }
+  h1 { text-align: center; margin-bottom: 2rem; color: #333; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; max-width: 1400px; margin: 0 auto; }
+
+  .card { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+  .card-preview {
+    padding: 1.5rem;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-preview .label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 0.25rem; }
+  .card-preview h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .card-preview p { font-size: 0.82rem; opacity: 0.75; line-height: 1.5; margin-bottom: 1rem; }
+  .card-preview .btn {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+
+  .swatches { display: flex; }
+  .swatch { flex: 1; padding: 0.75rem 0.5rem; text-align: center; }
+  .swatch-circle { width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 0.4rem; border: 2px solid rgba(0,0,0,0.08); }
+  .swatch .name { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #555; }
+  .swatch .hex { font-size: 0.65rem; color: #888; font-family: monospace; }
+
+  /* ── THEMES ── */
+
+  /* Arctic Frost */
+  .arctic-frost .card-preview { background: #d4e4f7; color: #1a2a3a; }
+  .arctic-frost .card-preview .btn { background: #4a6fa5; color: #fafafa; }
+  .arctic-frost .swatches { background: #fafafa; }
+
+  /* Botanical Garden */
+  .botanical-garden .card-preview { background: #f5f3ed; color: #2a1a0a; }
+  .botanical-garden .card-preview .btn { background: #4a7c59; color: #f5f3ed; }
+  .botanical-garden .swatches { background: #fff; }
+
+  /* Desert Rose */
+  .desert-rose .card-preview { background: #e8d5c4; color: #2a1520; }
+  .desert-rose .card-preview .btn { background: #5d2e46; color: #e8d5c4; }
+  .desert-rose .swatches { background: #f5ede6; }
+
+  /* Forest Canopy */
+  .forest-canopy .card-preview { background: #2d4a2b; color: #faf9f6; }
+  .forest-canopy .card-preview .btn { background: #a4ac86; color: #2d4a2b; }
+  .forest-canopy .swatches { background: #faf9f6; }
+
+  /* Golden Hour */
+  .golden-hour .card-preview { background: #4a403a; color: #d4b896; }
+  .golden-hour .card-preview .btn { background: #f4a900; color: #2a200a; }
+  .golden-hour .swatches { background: #f9f4ee; }
+
+  /* Midnight Galaxy */
+  .midnight-galaxy .card-preview { background: #2b1e3e; color: #e6e6fa; }
+  .midnight-galaxy .card-preview .btn { background: #a490c2; color: #2b1e3e; }
+  .midnight-galaxy .swatches { background: #1a1228; }
+  .midnight-galaxy .swatches .swatch .name,
+  .midnight-galaxy .swatches .swatch .hex { color: #ccc; }
+
+  /* Modern Minimalist */
+  .modern-minimalist .card-preview { background: #ffffff; color: #36454f; }
+  .modern-minimalist .card-preview .btn { background: #36454f; color: #ffffff; }
+  .modern-minimalist .swatches { background: #f5f5f5; }
+
+  /* Ocean Depths */
+  .ocean-depths .card-preview { background: #1a2332; color: #f1faee; }
+  .ocean-depths .card-preview .btn { background: #2d8b8b; color: #f1faee; }
+  .ocean-depths .swatches { background: #111a26; }
+  .ocean-depths .swatches .swatch .name,
+  .ocean-depths .swatches .swatch .hex { color: #aac; }
+
+  /* Sunset Boulevard */
+  .sunset-boulevard .card-preview { background: #264653; color: #e9c46a; }
+  .sunset-boulevard .card-preview .btn { background: #e76f51; color: #fff; }
+  .sunset-boulevard .swatches { background: #1a3040; }
+  .sunset-boulevard .swatches .swatch .name,
+  .sunset-boulevard .swatches .swatch .hex { color: #bbb; }
+
+  /* Tech Innovation */
+  .tech-innovation .card-preview { background: #1e1e1e; color: #ffffff; }
+  .tech-innovation .card-preview .btn { background: #0066ff; color: #ffffff; }
+  .tech-innovation .swatches { background: #111; }
+  .tech-innovation .swatches .swatch .name,
+  .tech-innovation .swatches .swatch .hex { color: #aaa; }
+</style>
+</head>
+<body>
+<h1>Theme Factory — All Palettes</h1>
+<div class="grid">
+
+  <!-- Arctic Frost -->
+  <div class="card arctic-frost">
+    <div class="card-preview">
+      <div>
+        <div class="label">Arctic Frost</div>
+        <h2>Clarity &amp; Precision</h2>
+        <p>Cool, crisp, and clinical. Great for tools and tech — nothing competes with the content.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#d4e4f7"></div><div class="name">Ice Blue</div><div class="hex">#d4e4f7</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#4a6fa5"></div><div class="name">Steel Blue</div><div class="hex">#4a6fa5</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#c0c0c0"></div><div class="name">Silver</div><div class="hex">#c0c0c0</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#fafafa; border:1px solid #ddd"></div><div class="name">White</div><div class="hex">#fafafa</div></div>
+    </div>
+  </div>
+
+  <!-- Botanical Garden -->
+  <div class="card botanical-garden">
+    <div class="card-preview">
+      <div>
+        <div class="label">Botanical Garden</div>
+        <h2>Fresh &amp; Organic</h2>
+        <p>Vibrant but grounded. Energetic without being loud — lively and warm at the same time.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#4a7c59"></div><div class="name">Fern</div><div class="hex">#4a7c59</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#f9a620"></div><div class="name">Marigold</div><div class="hex">#f9a620</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#b7472a"></div><div class="name">Terracotta</div><div class="hex">#b7472a</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#f5f3ed; border:1px solid #ddd"></div><div class="name">Cream</div><div class="hex">#f5f3ed</div></div>
+    </div>
+  </div>
+
+  <!-- Desert Rose -->
+  <div class="card desert-rose">
+    <div class="card-preview">
+      <div>
+        <div class="label">Desert Rose</div>
+        <h2>Soft &amp; Sophisticated</h2>
+        <p>Dusty, muted, elegant. Feels personal and curated rather than corporate or branded.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#d4a5a5"></div><div class="name">Dusty Rose</div><div class="hex">#d4a5a5</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#b87d6d"></div><div class="name">Clay</div><div class="hex">#b87d6d</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#e8d5c4"></div><div class="name">Sand</div><div class="hex">#e8d5c4</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#5d2e46"></div><div class="name">Burgundy</div><div class="hex">#5d2e46</div></div>
+    </div>
+  </div>
+
+  <!-- Forest Canopy -->
+  <div class="card forest-canopy">
+    <div class="card-preview">
+      <div>
+        <div class="label">Forest Canopy</div>
+        <h2>Grounded &amp; Deep</h2>
+        <p>Dark green base feels substantive — like a well-used reference book. Calm and serious.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#2d4a2b"></div><div class="name">Forest</div><div class="hex">#2d4a2b</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#7d8471"></div><div class="name">Sage</div><div class="hex">#7d8471</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#a4ac86"></div><div class="name">Olive</div><div class="hex">#a4ac86</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#faf9f6; border:1px solid #ddd"></div><div class="name">Ivory</div><div class="hex">#faf9f6</div></div>
+    </div>
+  </div>
+
+  <!-- Golden Hour -->
+  <div class="card golden-hour">
+    <div class="card-preview">
+      <div>
+        <div class="label">Golden Hour</div>
+        <h2>Warm &amp; Authoritative</h2>
+        <p>Closest to SP brass — rich dark base with warm gold. Most "curated library" energy of the set.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#f4a900"></div><div class="name">Mustard</div><div class="hex">#f4a900</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#c1666b"></div><div class="name">Terracotta</div><div class="hex">#c1666b</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#d4b896"></div><div class="name">Beige</div><div class="hex">#d4b896</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#4a403a"></div><div class="name">Brown</div><div class="hex">#4a403a</div></div>
+    </div>
+  </div>
+
+  <!-- Midnight Galaxy -->
+  <div class="card midnight-galaxy">
+    <div class="card-preview">
+      <div>
+        <div class="label">Midnight Galaxy</div>
+        <h2>Dramatic &amp; Cosmic</h2>
+        <p>Deep purple-black with lavender highlights. Feels like a private, after-dark workspace.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#2b1e3e"></div><div class="name">Deep Purple</div><div class="hex">#2b1e3e</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#4a4e8f"></div><div class="name">Cosmic Blue</div><div class="hex">#4a4e8f</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#a490c2"></div><div class="name">Lavender</div><div class="hex">#a490c2</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#e6e6fa"></div><div class="name">Silver</div><div class="hex">#e6e6fa</div></div>
+    </div>
+  </div>
+
+  <!-- Modern Minimalist -->
+  <div class="card modern-minimalist">
+    <div class="card-preview">
+      <div>
+        <div class="label">Modern Minimalist</div>
+        <h2>Clean &amp; Versatile</h2>
+        <p>Pure grayscale — zero distraction, maximum readability. Lets the skill names do all the work.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#36454f"></div><div class="name">Charcoal</div><div class="hex">#36454f</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#708090"></div><div class="name">Slate</div><div class="hex">#708090</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#d3d3d3"></div><div class="name">Light Gray</div><div class="hex">#d3d3d3</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#ffffff; border:1px solid #ddd"></div><div class="name">White</div><div class="hex">#ffffff</div></div>
+    </div>
+  </div>
+
+  <!-- Ocean Depths -->
+  <div class="card ocean-depths">
+    <div class="card-preview">
+      <div>
+        <div class="label">Ocean Depths</div>
+        <h2>Calm &amp; Focused</h2>
+        <p>Deep navy with teal accents. Professional and focused — like a research environment you'd actually use for hours.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#1a2332"></div><div class="name">Deep Navy</div><div class="hex">#1a2332</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#2d8b8b"></div><div class="name">Teal</div><div class="hex">#2d8b8b</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#a8dadc"></div><div class="name">Seafoam</div><div class="hex">#a8dadc</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#f1faee"></div><div class="name">Cream</div><div class="hex">#f1faee</div></div>
+    </div>
+  </div>
+
+  <!-- Sunset Boulevard -->
+  <div class="card sunset-boulevard">
+    <div class="card-preview">
+      <div>
+        <div class="label">Sunset Boulevard</div>
+        <h2>Warm &amp; Vibrant</h2>
+        <p>Burnt orange and coral on dark teal — energetic and creative, high contrast, distinctive.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#e76f51"></div><div class="name">Burnt Orange</div><div class="hex">#e76f51</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#f4a261"></div><div class="name">Coral</div><div class="hex">#f4a261</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#e9c46a"></div><div class="name">Warm Sand</div><div class="hex">#e9c46a</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#264653"></div><div class="name">Deep Teal</div><div class="hex">#264653</div></div>
+    </div>
+  </div>
+
+  <!-- Tech Innovation -->
+  <div class="card tech-innovation">
+    <div class="card-preview">
+      <div>
+        <div class="label">Tech Innovation</div>
+        <h2>Bold &amp; Digital</h2>
+        <p>Electric blue and neon cyan on near-black. Feels like a live dashboard or terminal — unapologetically techy.</p>
+      </div>
+      <span class="btn">Browse Skills →</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-circle" style="background:#0066ff"></div><div class="name">Electric Blue</div><div class="hex">#0066ff</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#00ffff"></div><div class="name">Neon Cyan</div><div class="hex">#00ffff</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#1e1e1e"></div><div class="name">Dark Gray</div><div class="hex">#1e1e1e</div></div>
+      <div class="swatch"><div class="swatch-circle" style="background:#ffffff; border:1px solid #555"></div><div class="name">White</div><div class="hex">#ffffff</div></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
