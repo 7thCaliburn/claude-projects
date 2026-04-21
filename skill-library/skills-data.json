@@ -483,13 +483,13 @@
     "slug": "wiki-batch-orchestrator",
     "name": "wiki-batch-orchestrator",
     "description": "State machine that runs wiki ingest batches, audits output, rolls back bad pages, and stops on systemic failures.",
-    "mtime": 1776432305658
+    "mtime": 1776791475794
   },
   {
     "slug": "wiki-batch-run",
     "name": "wiki-batch-run",
     "description": "Executes one wiki ingest batch via batch_run.py and returns the result JSON — called by wiki-batch-orchestrator.",
-    "mtime": 1776350788641
+    "mtime": 1776791487455
   },
   {
     "slug": "wiki-query",
